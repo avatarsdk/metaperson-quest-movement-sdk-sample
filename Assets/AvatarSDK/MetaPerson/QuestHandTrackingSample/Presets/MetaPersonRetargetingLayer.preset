@@ -1,0 +1,899 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MetaPersonRetargetingLayer
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 31e3b6438933e1945a67ef8d4db811bf, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _skeletonType
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _updateRootPose
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _updateRootScale
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _enablePhysicsCapsules
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _applyBoneTranslations
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.size
+    value: 24
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].Joint
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].DisableRotationTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].DisablePositionTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[0].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].Joint
+    value: 51
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].RotationChange.y
+    value: 0.258819
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].DisablePositionTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[1].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].Joint
+    value: 52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].RotationChange.y
+    value: 0.258819
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[2].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].Joint
+    value: 53
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].RotationChange.y
+    value: 0.258819
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[3].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].Joint
+    value: 49
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[4].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].Joint
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[5].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].Joint
+    value: 46
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[6].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].Joint
+    value: 47
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[7].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].Joint
+    value: 43
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[8].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].Joint
+    value: 44
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[9].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].Joint
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[10].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].Joint
+    value: 41
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[11].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].Joint
+    value: 36
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].RotationChange.y
+    value: -0.25881904
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].DisablePositionTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[12].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].Joint
+    value: 37
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].RotationChange.y
+    value: -0.25881904
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[13].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].Joint
+    value: 38
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].RotationChange.y
+    value: -0.25881904
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].RotationChange.w
+    value: 0.9659258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[14].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].Joint
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[15].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].Joint
+    value: 35
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[16].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].Joint
+    value: 28
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[17].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].Joint
+    value: 29
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[18].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].Joint
+    value: 31
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[19].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].Joint
+    value: 32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[20].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].Joint
+    value: 25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[21].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].Joint
+    value: 26
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].RotationChange.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].RotationChange.w
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[22].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].Joint
+    value: 54
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].RotationChange.x
+    value: -0.17364818
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].RotationChange.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].RotationChange.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].RotationChange.w
+    value: 0.9848077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].DisableRotationTransform
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].DisablePositionTransform
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _adjustments.Array.data[23].BoneIdOverrideValue
+    value: 71
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[0]
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[1]
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[2]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[3]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[4]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[5]
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[6]
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionsToAlign.Array.data[7]
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionToPosition.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionToPosition.Array.data[0]
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionToPosition.Array.data[1]
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bodySectionToPosition.Array.data[2]
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _correctPositionsLateUpdate
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _leftHandCorrectionWeightLateUpdate
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _rightHandCorrectionWeightLateUpdate
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _applyAnimationConstraintsToCorrectedPositions
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _enableTrackingByProxy
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _retargetingAnimationConstraint
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _jointRotationTweaks.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
