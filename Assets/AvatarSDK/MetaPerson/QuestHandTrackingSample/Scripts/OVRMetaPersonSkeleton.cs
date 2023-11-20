@@ -22,6 +22,11 @@ namespace AvatarSDK.MetaPerson.Oculus
 {
 	public class OVRMetaPersonSkeleton : OVRCustomSkeleton
 	{
+		[Range(0.0f, 1.0f)]
+		public float twist1Coeff = 0.5f;
+		[Range(0.0f, 1.0f)]
+		public float twist2Coeff = 1.0f;
+
 		public MPBindPose bindPose;
 
 		private IOVRSkeletonDataProvider skeletonDataProvider;
@@ -29,15 +34,37 @@ namespace AvatarSDK.MetaPerson.Oculus
 		private GameObject additionalBones;
 		private HashSet<BoneId> additionalBonesIds = new HashSet<BoneId>();
 
+		private ForeArmTwistAdjustment leftHandTwistAdjustment;
+		private ForeArmTwistAdjustment rightHandTwistAdjustment;
+
 		protected override void Start()
 		{
 			ApplyBindPose();
 			base.Start();
+
+			Transform leftForearmTwist1 = FindChildByName(BonesMapping.leftForeArmTwist1Name);
+			Transform leftForearmTwist2 = FindChildByName(BonesMapping.leftForeArmTwist2Name);
+			Transform leftHand = FindChildByName(BonesMapping.leftHandName);
+			Transform leftForeArm = FindChildByName(BonesMapping.leftForeArmName);
+			if (leftForearmTwist1 != null && leftForearmTwist2 != null && leftHand != null && leftForeArm != null)
+				leftHandTwistAdjustment = new ForeArmTwistAdjustment(leftHand, leftForeArm, leftForearmTwist1, leftForearmTwist2);
+
+			Transform rightForearmTwist1 = FindChildByName(BonesMapping.rightForeArmTwist1Name);
+			Transform rightForearmTwist2 = FindChildByName(BonesMapping.rightForeArmTwist2Name);
+			Transform rightHand = FindChildByName(BonesMapping.rightHandName);
+			Transform rightForeArm = FindChildByName(BonesMapping.rightForeArmName);
+			if (rightForearmTwist1 != null && rightForearmTwist2 != null && rightHand != null && rightForeArm != null)
+				rightHandTwistAdjustment = new ForeArmTwistAdjustment(rightHand, rightForeArm, rightForearmTwist1, rightForearmTwist2);
 		}
 
 		protected override void Update()
 		{
 			UpdateMetaPersonSkeleton();
+
+			if (leftHandTwistAdjustment != null)
+				leftHandTwistAdjustment.Update(twist1Coeff, twist2Coeff);
+			if (rightHandTwistAdjustment != null)
+				rightHandTwistAdjustment.Update(twist1Coeff, twist2Coeff);
 		}
 
 		public void MapBones()
@@ -130,6 +157,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 				if (_bones[i].Id == BoneId.Body_Hips || additionalBonesIds.Contains(_bones[i].Id))
 					boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
+
 				boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
 			}
 
@@ -270,6 +298,12 @@ namespace AvatarSDK.MetaPerson.Oculus
 			}
 
 			return null;
+		}
+
+		private Transform FindChildByName(string transformName)
+		{
+			var transforms = GetComponentsInChildren<Transform>();
+			return transforms.FirstOrDefault(t => t.name == transformName);
 		}
 	}
 

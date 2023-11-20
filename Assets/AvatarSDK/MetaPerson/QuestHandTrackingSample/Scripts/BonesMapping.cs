@@ -16,6 +16,16 @@ namespace AvatarSDK.MetaPerson.Oculus
 {
 	public class BonesMapping
 	{
+		public static readonly string leftForeArmTwist1Name = "LeftForeArm1";
+		public static readonly string leftForeArmTwist2Name = "LeftForeArm2";
+		public static readonly string leftHandName = "LeftHand";
+		public static readonly string leftForeArmName = "LeftForeArm";
+
+		public static readonly string rightForeArmTwist1Name = "RightForeArm1";
+		public static readonly string rightForeArmTwist2Name = "RightForeArm2";
+		public static readonly string rightHandName = "RightHand";
+		public static readonly string rightForeArmName = "RightForeArm";
+
 		public static readonly Dictionary<OVRPlugin.BoneId, string> boneIdToMetaPersonBones = new Dictionary<OVRPlugin.BoneId, string>()
 		{
 			{ OVRPlugin.BoneId.Body_Root, "" },

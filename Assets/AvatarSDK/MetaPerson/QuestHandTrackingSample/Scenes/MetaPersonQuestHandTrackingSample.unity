@@ -386,6 +386,8 @@ MonoBehaviour:
   - {fileID: 808676902}
   - {fileID: 808676901}
   retargetingType: 0
+  twist1Coeff: 0.5
+  twist2Coeff: 1
   bindPose: {fileID: 11400000, guid: b5c21a381da59d949873feb7a32d2ed8, type: 2}
 --- !u!114 &429074295
 MonoBehaviour:
@@ -1074,12 +1076,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5740825439003164722, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5702350262334440183, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1912853713933714397, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -441596189440780170, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -398539431652421975, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467336855217539506, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
       propertyPath: m_Name
       value: MetaPersonMale
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399262706480193352, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480636403939241134, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959732557216303469, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937541551142690876, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1448,6 +1490,8 @@ MonoBehaviour:
   - {fileID: 1479222860}
   - {fileID: 1479222859}
   retargetingType: 0
+  twist1Coeff: 0.5
+  twist2Coeff: 1
   bindPose: {fileID: 11400000, guid: fee02abafcfb6dd498ce9db5eabc30e4, type: 2}
 --- !u!114 &1479222916
 MonoBehaviour:
