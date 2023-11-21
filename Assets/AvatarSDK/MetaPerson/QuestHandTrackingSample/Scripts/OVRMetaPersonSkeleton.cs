@@ -27,6 +27,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 		[Range(0.0f, 1.0f)]
 		public float twist2Coeff = 1.0f;
 
+		public bool moveHips = true;
+
 		public MPBindPose bindPose;
 
 		private IOVRSkeletonDataProvider skeletonDataProvider;
@@ -155,10 +157,19 @@ namespace AvatarSDK.MetaPerson.Oculus
 				var boneTransform = _bones[i].Transform;
 				if (boneTransform == null) continue;
 
-				if (_bones[i].Id == BoneId.Body_Hips || additionalBonesIds.Contains(_bones[i].Id))
+				if (additionalBonesIds.Contains(_bones[i].Id))
 					boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
 
-				boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+				if (_bones[i].Id == BoneId.Body_Hips)
+				{
+					if (moveHips)
+					{
+						boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
+						boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+					}
+				}
+				else
+					boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
 			}
 
 			if (bindPose.skeletonType == MetaPersonSkeletonType.Male)
