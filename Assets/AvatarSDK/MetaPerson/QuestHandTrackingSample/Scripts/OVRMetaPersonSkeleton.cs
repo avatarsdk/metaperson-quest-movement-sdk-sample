@@ -31,6 +31,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public MPBindPose bindPose;
 
+		public OVRTransformsPositioner transformsPositioner;
+
 		private IOVRSkeletonDataProvider skeletonDataProvider;
 
 		private GameObject additionalBones;
@@ -38,6 +40,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		private ForeArmTwistAdjustment leftHandTwistAdjustment;
 		private ForeArmTwistAdjustment rightHandTwistAdjustment;
+
+		private List<TwoBoneIK> bonesIKs = new List<TwoBoneIK>();
 
 		protected override void Start()
 		{
@@ -57,6 +61,11 @@ namespace AvatarSDK.MetaPerson.Oculus
 			Transform rightForeArm = FindChildByName(BonesMapping.rightForeArmName);
 			if (rightForearmTwist1 != null && rightForearmTwist2 != null && rightHand != null && rightForeArm != null)
 				rightHandTwistAdjustment = new ForeArmTwistAdjustment(rightHand, rightForeArm, rightForearmTwist1, rightForearmTwist2);
+
+			if (transformsPositioner == null)
+				transformsPositioner = GetComponentInChildren<OVRTransformsPositioner>();
+
+			bonesIKs = GetComponentsInChildren<TwoBoneIK>().ToList();
 		}
 
 		protected override void Update()
@@ -81,6 +90,33 @@ namespace AvatarSDK.MetaPerson.Oculus
 						CustomBones[(int)boneMap.Key] = t;
 				}
 			}
+		}
+
+		public void UpdateNotInitializedSkeleton(SkeletonPoseData data)
+		{
+			for (var i = 0; i < CustomBones.Count; ++i)
+			{
+				var boneTransform = CustomBones[i];
+				if (boneTransform == null) continue;
+
+				if (i == (int)BoneId.Body_Hips)
+				{
+					if (moveHips)
+					{
+						boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
+						boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+					}
+				}
+				else
+					boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+			}
+
+
+			if (transformsPositioner != null)
+				transformsPositioner.UpdatePositions(data);
+
+			foreach (var twoBoneIk in bonesIKs)
+				twoBoneIk.CustomUpdate();
 		}
 
 		protected override void InitializeBones()
@@ -172,7 +208,13 @@ namespace AvatarSDK.MetaPerson.Oculus
 					boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
 			}
 
-			if (bindPose.skeletonType == MetaPersonSkeletonType.Male)
+			if (transformsPositioner != null)
+				transformsPositioner.UpdatePositions(data);
+
+			foreach (var twoBoneIk in bonesIKs)
+				twoBoneIk.CustomUpdate();
+
+			/*if (bindPose.skeletonType == MetaPersonSkeletonType.Male)
 			{
 				//right hand adjustments
 				{
@@ -259,7 +301,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 					ShiftFingerIfTooCloseToNearby(leftThumbMetaTransform, leftThumbProximalTransform, leftIndexProximalTransform, 40);
 				}
-			}
+			}*/
 		}
 
 		private void RotateRightLittleFinger()
