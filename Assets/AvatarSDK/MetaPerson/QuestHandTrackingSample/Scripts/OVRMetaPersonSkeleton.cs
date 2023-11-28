@@ -380,7 +380,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 			var start = skeleton.GetCurrentStartBoneId();
 			var end = skeleton.GetCurrentEndBoneId();
-			if (skeleton.IsValidBone(start) && skeleton.IsValidBone(end))
+			if (skeleton.IsValidBone(start) && skeleton.IsValidBone(end) && skeleton.CustomBones != null)
 			{
 				for (var i = (int)start; i < (int)end; ++i)
 				{

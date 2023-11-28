@@ -28,11 +28,6 @@ namespace AvatarSDK.MetaPerson.Oculus
 		public float upperRotationOffset;
 		public float lowerRotationOffset;
 
-		//TODO: remove
-		public bool debug = false;
-		public bool pinkyFix = false;
-		public float pinkyFixValue = 0.02f;
-
 		public bool moveTargetTowardsPole = false;
 		[HideInInspector]
 		public float minPoleAngle = 0;
@@ -42,8 +37,6 @@ namespace AvatarSDK.MetaPerson.Oculus
 		public float minAngleTagetOffset = 0;
 		[HideInInspector]
 		public float maxAngleTargetOffset = 0;
-
-		public string testName = "";
 
 		/*private void LateUpdate()
 		{
@@ -64,23 +57,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 		private void SolveTwoBoneIK()
 		{
 			Vector3 targetPosition = target.position;
-			if (pinkyFix)
+			if (moveTargetTowardsPole)
 			{
-				Vector3 poleToUpper = upper.position - pole.position;
-				Vector3 poleToTarget = targetPosition - pole.position;
-				float poleToTargetDistance = poleToTarget.magnitude;
-				float poleToUpperDistance = poleToUpper.magnitude;
-				float upperToTargetDistance = (targetPosition - upper.position).magnitude;
-
-				float currentAngle = CosAngle(poleToTargetDistance, poleToUpperDistance, upperToTargetDistance);
-				targetPosition += target.right * (currentAngle - 90) * pinkyFixValue / 90.0f;
-
-				if (debug)
-					Debug.LogWarningFormat("CosAngle={0}", currentAngle);
-			}
-			else if (moveTargetTowardsPole)
-			{
-				//Debug.LogWarningFormat("moveTargetTowardsPole");
 				Vector3 poleToUpper = upper.position - pole.position;
 				Vector3 poleToTarget = targetPosition - pole.position;
 				float poleToTargetDistance = poleToTarget.magnitude;
@@ -91,16 +69,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 				float offsetVal = 0.0f;
 				if (currentPoleAngle >= minPoleAngle && currentPoleAngle <= maxPoleAngle)
 				{
-					offsetVal = Mathf.Lerp(Mathf.Min(minAngleTagetOffset, maxAngleTargetOffset), Mathf.Max(minAngleTagetOffset, maxAngleTargetOffset), 
-						(currentPoleAngle - minPoleAngle) / (maxPoleAngle - minPoleAngle));
+					offsetVal = Mathf.Lerp(minAngleTagetOffset, maxAngleTargetOffset, (currentPoleAngle - minPoleAngle) / (maxPoleAngle - minPoleAngle));
 					targetPosition += target.right * offsetVal;
-				}
-
-				if (debug)
-				{
-					//Debug.LogWarningFormat("Pole Angle={0}, {1}, {2}, {3}, {4}", currentPoleAngle, minPoleAngle, maxPoleAngle, minAngleTagetOffset, maxAngleTargetOffset);
-					//Debug.LogWarningFormat("Offset = {0}, right length = {1}", offsetVal, target.right.magnitude);
-					Debug.LogWarningFormat("[DBG] {0}", testName);
 				}
 			}
 

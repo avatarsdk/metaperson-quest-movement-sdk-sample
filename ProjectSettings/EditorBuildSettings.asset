@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHandTrackingSample.unity
     guid: 636f881940a566046bdfadd4285e4e58
-  - enabled: 0
-    path: Assets/MovementsSDK/Samples/Scenes/MovementHighFidelity.unity
-    guid: 95d70f1c0a626c449881b1b4260b6b9d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 553dd7faa3821aa47a859b989b49c95d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6b3957eb78c5ae241b802536f35caf47, type: 2}
