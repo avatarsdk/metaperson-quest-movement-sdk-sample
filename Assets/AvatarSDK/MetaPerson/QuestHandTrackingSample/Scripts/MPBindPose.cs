@@ -75,7 +75,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 				for (int i = 0; i < bones.Length; i++)
 				{
 					bindposes[i] = GetPose(bones[i]);
-					Matrix4x4 m = Matrix4x4.Inverse(bindposes[i]);
+					Matrix4x4 m = gameObject.transform.localToWorldMatrix * Matrix4x4.Inverse(bindposes[i]);
 					bones[i].position = m.GetPosition();
 					bones[i].rotation = m.rotation;
 				}

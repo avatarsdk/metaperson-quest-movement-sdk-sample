@@ -43,7 +43,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 			SolveTwoBoneIK();
 		}*/
 
-		public void CustomUpdate()
+		public void ForceUpdate()
 		{
 			SolveTwoBoneIK();
 		}

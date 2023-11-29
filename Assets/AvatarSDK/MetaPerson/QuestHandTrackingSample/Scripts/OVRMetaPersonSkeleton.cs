@@ -94,6 +94,9 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public void UpdateNotInitializedSkeleton(SkeletonPoseData data)
 		{
+			Vector3 transformPosition = transform.position;
+			Quaternion transformRotation = transform.rotation;
+			Matrix4x4 transformMat = transform.localToWorldMatrix;
 			for (var i = 0; i < CustomBones.Count; ++i)
 			{
 				var boneTransform = CustomBones[i];
@@ -103,20 +106,20 @@ namespace AvatarSDK.MetaPerson.Oculus
 				{
 					if (moveHips)
 					{
-						boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
-						boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+						boneTransform.position = transformMat.MultiplyPoint(data.BoneTranslations[i].FromFlippedZVector3f());
+						boneTransform.rotation = transformRotation * data.BoneRotations[i].FromFlippedZQuatf();
 					}
 				}
 				else
-					boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+					boneTransform.rotation = transformRotation * data.BoneRotations[i].FromFlippedZQuatf();
 			}
 
 
 			if (transformsPositioner != null)
-				transformsPositioner.UpdatePositions(data);
+				transformsPositioner.UpdatePositions(data, transformPosition, transformRotation);
 
 			foreach (var twoBoneIk in bonesIKs)
-				twoBoneIk.CustomUpdate();
+				twoBoneIk.ForceUpdate();
 		}
 
 		protected override void InitializeBones()
@@ -188,120 +191,34 @@ namespace AvatarSDK.MetaPerson.Oculus
 				transform.localScale = new Vector3(data.RootScale, data.RootScale, data.RootScale);
 			}*/
 
+			Vector3 transformPosition = transform.position;
+			Quaternion transformRotation = transform.rotation;
+			Matrix4x4 transformMat = transform.localToWorldMatrix;
 			for (var i = 0; i < _bones.Count; ++i)
 			{
 				var boneTransform = _bones[i].Transform;
 				if (boneTransform == null) continue;
 
 				if (additionalBonesIds.Contains(_bones[i].Id))
-					boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
+					boneTransform.position = transformMat.MultiplyPoint(data.BoneTranslations[i].FromFlippedZVector3f());
 
 				if (_bones[i].Id == BoneId.Body_Hips)
 				{
 					if (moveHips)
 					{
-						boneTransform.position = data.BoneTranslations[i].FromFlippedZVector3f();
-						boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+						boneTransform.position = transformMat.MultiplyPoint(data.BoneTranslations[i].FromFlippedZVector3f());
+						boneTransform.rotation = transformRotation * data.BoneRotations[i].FromFlippedZQuatf();
 					}
 				}
 				else
-					boneTransform.rotation = data.BoneRotations[i].FromFlippedZQuatf();
+					boneTransform.rotation = transformRotation * data.BoneRotations[i].FromFlippedZQuatf();
 			}
 
 			if (transformsPositioner != null)
-				transformsPositioner.UpdatePositions(data);
+				transformsPositioner.UpdatePositions(data, transformPosition, transformRotation);
 
 			foreach (var twoBoneIk in bonesIKs)
-				twoBoneIk.CustomUpdate();
-
-			/*if (bindPose.skeletonType == MetaPersonSkeletonType.Male)
-			{
-				//right hand adjustments
-				{
-					Transform rightLittleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandLittleProximal].Transform;
-					Transform rightLittleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandLittleIntermediate].Transform;
-					Transform rightLittleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandLittleDistal].Transform;
-					Transform rightRingProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandRingProximal].Transform;
-					Transform rightRingIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandRingIntermediate].Transform;
-					Transform rightMiddleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandMiddleProximal].Transform;
-					Transform rightMiddleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandMiddleIntermediate].Transform;
-					Transform rightMiddleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandMiddleDistal].Transform;
-					Transform rightIndexProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandIndexProximal].Transform;
-					Transform rightThumbMetaTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandThumbMetacarpal].Transform;
-					Transform rightThumbProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandThumbProximal].Transform;
-
-					rightLittleIntermediateTransform.Rotate(rightLittleIntermediateTransform.position - rightLittleProximalTransform.position, 10, Space.World);
-					rightMiddleIntermediateTransform.Rotate(rightMiddleIntermediateTransform.position - rightMiddleProximalTransform.position, -5, Space.World);
-					rightMiddleDistalTransform.Rotate(rightMiddleDistalTransform.position - rightMiddleIntermediateTransform.position, 10, Space.World);
-
-					ShiftFingerIfTooCloseToNearby(rightRingProximalTransform, rightRingIntermediateTransform, rightMiddleIntermediateTransform, 17);
-					ShiftFingerIfTooCloseToNearby(rightLittleProximalTransform, rightLittleIntermediateTransform, rightRingIntermediateTransform, 20);
-					ShiftFingerIfTooCloseToNearby(rightThumbMetaTransform, rightThumbProximalTransform, rightIndexProximalTransform, 40);
-				}
-
-				//left hand adjustments
-				{
-					Transform leftLittleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleProximal].Transform;
-					Transform leftLittleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleIntermediate].Transform;
-					Transform leftLittleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleDistal].Transform;
-					Transform leftRingProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandRingProximal].Transform;
-					Transform leftRingIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandRingIntermediate].Transform;
-					Transform leftMiddleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandMiddleProximal].Transform;
-					Transform leftMiddleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandMiddleIntermediate].Transform;
-					Transform leftMiddleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandMiddleDistal].Transform;
-					Transform leftIndexProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandIndexProximal].Transform;
-					Transform leftThumbMetaTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandThumbMetacarpal].Transform;
-					Transform leftThumbProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandThumbProximal].Transform;
-
-					leftLittleIntermediateTransform.Rotate(leftLittleIntermediateTransform.position - leftLittleProximalTransform.position, -10, Space.World);
-					leftMiddleIntermediateTransform.Rotate(leftMiddleIntermediateTransform.position - leftMiddleProximalTransform.position, 5, Space.World);
-					leftMiddleDistalTransform.Rotate(leftMiddleDistalTransform.position - leftMiddleIntermediateTransform.position, -10, Space.World);
-
-					ShiftFingerIfTooCloseToNearby(leftRingProximalTransform, leftRingIntermediateTransform, leftMiddleIntermediateTransform, 17);
-					ShiftFingerIfTooCloseToNearby(leftLittleProximalTransform, leftLittleIntermediateTransform, leftRingIntermediateTransform, 20);
-					ShiftFingerIfTooCloseToNearby(leftThumbMetaTransform, leftThumbProximalTransform, leftIndexProximalTransform, 40);
-				}
-			}
-			else if (bindPose.skeletonType == MetaPersonSkeletonType.Female)
-			{
-				//right hand adjustments
-				{
-					Transform rightLittleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandLittleProximal].Transform;
-					Transform rightLittleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandLittleIntermediate].Transform;
-					Transform rightRingProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandRingProximal].Transform;
-					Transform rightRingIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandRingIntermediate].Transform;
-					Transform rightMiddleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandMiddleIntermediate].Transform;
-					Transform rightMiddleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandMiddleDistal].Transform;
-					Transform rightIndexProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandIndexProximal].Transform;
-					Transform rightThumbMetaTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandThumbMetacarpal].Transform;
-					Transform rightThumbProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_RightHandThumbProximal].Transform;
-
-					rightLittleIntermediateTransform.Rotate(rightLittleIntermediateTransform.position - rightLittleProximalTransform.position, 10, Space.World);
-					rightMiddleDistalTransform.Rotate(rightMiddleDistalTransform.position - rightMiddleIntermediateTransform.position, 10, Space.World);
-					rightRingIntermediateTransform.Rotate(rightRingIntermediateTransform.position - rightRingProximalTransform.position, 10, Space.World);
-
-					ShiftFingerIfTooCloseToNearby(rightThumbMetaTransform, rightThumbProximalTransform, rightIndexProximalTransform, 40);
-				}
-
-				//left hand adjustments
-				{
-					Transform leftLittleProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleProximal].Transform;
-					Transform leftLittleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleIntermediate].Transform;
-					Transform leftRingProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandRingProximal].Transform;
-					Transform leftRingIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandRingIntermediate].Transform;
-					Transform leftMiddleIntermediateTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandMiddleIntermediate].Transform;
-					Transform leftMiddleDistalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandMiddleDistal].Transform;
-					Transform leftIndexProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandIndexProximal].Transform;
-					Transform leftThumbMetaTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandThumbMetacarpal].Transform;
-					Transform leftThumbProximalTransform = _bones[(int)OVRSkeleton.BoneId.Body_LeftHandThumbProximal].Transform;
-
-					leftLittleIntermediateTransform.Rotate(leftLittleIntermediateTransform.position - leftLittleProximalTransform.position, -10, Space.World);
-					leftMiddleDistalTransform.Rotate(leftMiddleDistalTransform.position - leftMiddleIntermediateTransform.position, -10, Space.World);
-					leftRingIntermediateTransform.Rotate(leftRingIntermediateTransform.position - leftRingProximalTransform.position, -10, Space.World);
-
-					ShiftFingerIfTooCloseToNearby(leftThumbMetaTransform, leftThumbProximalTransform, leftIndexProximalTransform, 40);
-				}
-			}*/
+				twoBoneIk.ForceUpdate();
 		}
 
 		private void RotateRightLittleFinger()
