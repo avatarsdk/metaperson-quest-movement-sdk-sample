@@ -12,3 +12,9 @@ The sample demonstrates how to use [Body Tracking from the Movement SDK](https:/
 4. Set **Hand Tracking Support** to **Controllers And Hands** and **Body Tracking Support** to **Required** for OculusProjectConfig (Assets -> Oculus).
 ![Project Config](./Documentation/Images/enable_body_tracking.JPG "Project Config")
 5. Open the `Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHandTrackingSample.unity` scene.
+
+### How To Configure MetaPerson Model For Body Tracking
+1. Add a MetaPerson avatar from the [MetaPerson](https://metaperson.avatarsdk.com/) into a unity scene.
+2. Right click on the model in the Hierarchy window and choose `Moement -> Setup Character for Body Tracking -> Format: MetaPerson Male`. (Choose `MetaPerson Female` if you are using MetaPerson Female model.)
+![Configure MetaPerson Model](./Documentation/Images/setup_model_for_body_tracking.jpg "Configure MetaPerson Model")
+3. It will add the [OVRMetaPersonSkeleton component](./Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scripts/OVRMetaPersonSkeleton.cs) to the model and make initial setup.
