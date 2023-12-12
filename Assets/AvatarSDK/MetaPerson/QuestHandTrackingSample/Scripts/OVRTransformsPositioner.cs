@@ -18,16 +18,6 @@ namespace AvatarSDK.MetaPerson.Oculus
 {
 	public class OVRTransformsPositioner : MonoBehaviour
 	{
-		[Serializable]
-		public class BoneTarget
-		{
-			public OVRBodyBoneId boneId;
-
-			public Transform target;
-
-			public Vector3 positionOffset;
-		}
-
 		public List<BoneTarget> boneTargets = new List<BoneTarget>();
 
 		public void UpdatePositions(SkeletonPoseData data, Vector3 rootPosition, Quaternion rootRotation)

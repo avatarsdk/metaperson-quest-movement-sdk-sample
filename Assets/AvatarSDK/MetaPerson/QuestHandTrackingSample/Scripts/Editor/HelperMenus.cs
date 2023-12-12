@@ -30,7 +30,9 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		[MenuItem("GameObject/Movement/Setup Character for Body Tracking/Format: MetaPerson Female")]
 		private static void SetupMetaPersonFemaleForBodyTracking()
 		{
-			Debug.LogError("There is no configuration for MetaPerson Female character.");
+			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRMetaPersonSkeletonFemale.preset";
+			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Prefabs/IK_setup_female.prefab";
+			SetupMetaPersonForBodyTracking(skeletonPresetPath, ikPrefabPath);
 		}
 
 		private static void SetupMetaPersonForBodyTracking(string skeletonPresetPath, string ikPrefabPath)
@@ -62,10 +64,12 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 			metaPersonSkeleton.transformsPositioner = ikSetupObject.GetComponent<OVRTransformsPositioner>();
 			Undo.RegisterCreatedObjectUndo(ikSetupObject, "Add IK prefab");
 
-			SetupBonesForIKs(ikSetupObject.GetComponentsInChildren<TwoBoneIK>(), activeGameObject.GetComponentsInChildren<Transform>());
+			Transform[] transforms = activeGameObject.GetComponentsInChildren<Transform>();
+			ConfigureTwoBonesIKs(ikSetupObject.GetComponentsInChildren<TwoBoneIK>(), transforms);
+			ConfigureFingerPositioners(ikSetupObject.GetComponentsInChildren<FingerBonesPositioner>(), transforms);
 		}
 
-		private static void SetupBonesForIKs(TwoBoneIK[] twoBoneIKs, Transform[] bones)
+		private static void ConfigureTwoBonesIKs(TwoBoneIK[] twoBoneIKs, Transform[] bones)
 		{
 			Dictionary<string, string[]> boneNamesForIK = new Dictionary<string, string[]>()
 			{
@@ -94,6 +98,16 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 				}
 				else
 					Debug.LogWarningFormat("Unexpected TwoBoneIK: {0}", boneIK.name);
+			}
+		}
+
+		private static void ConfigureFingerPositioners(FingerBonesPositioner[] fingerBonesPositioners, Transform[] bones)
+		{
+			foreach(FingerBonesPositioner positioner in fingerBonesPositioners)
+			{
+				positioner.proximal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.proximal.boneId]);
+				positioner.middle.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.middle.boneId]);
+				positioner.distal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.distal.boneId]);
 			}
 		}
 	}
