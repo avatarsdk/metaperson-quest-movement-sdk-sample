@@ -19,7 +19,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 		public Transform end;
 
 		public Transform target;
-		public Transform pole; 
+		public Transform pole;
 
 		/*private void LateUpdate()
 		{
@@ -46,11 +46,13 @@ namespace AvatarSDK.MetaPerson.Oculus
 			float c = Vector3.Distance(upper.position, targetPosition);
 			Vector3 n = Vector3.Cross(targetPosition - upper.position, pole.position - upper.position);
 
-			upper.rotation = Quaternion.LookRotation(targetPosition - upper.position, pole.up);
+			Vector3 upperForward = upper.rotation * Vector3.forward;
+			upper.rotation = Quaternion.LookRotation(targetPosition - upper.position, -upperForward/* -pole.forward*/);
 			upper.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, lower.localPosition));
 			upper.rotation = Quaternion.AngleAxis(-CosAngle(a, c, b), -n) * upper.rotation;
 
-			lower.rotation = Quaternion.LookRotation(targetPosition - lower.position, pole.up);
+			Vector3 lowerForward = lower.rotation * Vector3.forward;
+			lower.rotation = Quaternion.LookRotation(targetPosition - lower.position, -lowerForward/* -pole.forward*/);
 			lower.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, end.localPosition));
 
 			end.rotation = target.rotation;

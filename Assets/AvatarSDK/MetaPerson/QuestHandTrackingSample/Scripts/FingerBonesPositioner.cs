@@ -30,23 +30,23 @@ namespace AvatarSDK.MetaPerson.Oculus
 			middleToDistal = distal.target.position - middle.target.position;
 		}
 
-		public void UpdateBonesPositions(SkeletonPoseData data, Vector3 modelPosition, Quaternion modelRotation)
+		public void UpdateBonesPositions(PoseData data, Vector3 modelPosition, Quaternion modelRotation)
 		{
 			Matrix4x4 toModelMat = Matrix4x4.TRS(modelPosition, modelRotation, Vector3.one);
 			BonePosition proximalPosition = new BonePosition()
 			{
-				position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)proximal.boneId].FromFlippedZVector3f()),
-				rotation = modelRotation * data.BoneRotations[(int)proximal.boneId].FromFlippedZQuatf()
+				position = toModelMat.MultiplyPoint(data.positions[(int)proximal.boneId]),
+				rotation = modelRotation * data.rotations[(int)proximal.boneId]
 			};
 			BonePosition middlePosition = new BonePosition()
 			{
-				position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)middle.boneId].FromFlippedZVector3f()),
-				rotation = modelRotation * data.BoneRotations[(int)middle.boneId].FromFlippedZQuatf()
+				position = toModelMat.MultiplyPoint(data.positions[(int)middle.boneId]),
+				rotation = modelRotation * data.rotations[(int)middle.boneId]
 			};
 			BonePosition distalPosition = new BonePosition()
 			{
-				position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)distal.boneId].FromFlippedZVector3f()),
-				rotation = modelRotation * data.BoneRotations[(int)distal.boneId].FromFlippedZQuatf()
+				position = toModelMat.MultiplyPoint(data.positions[(int)distal.boneId]),
+				rotation = modelRotation * data.rotations[(int)distal.boneId]
 			};
 
 			SolveTwoBoneIK(proximalPosition, middlePosition, distalPosition);
@@ -65,13 +65,13 @@ namespace AvatarSDK.MetaPerson.Oculus
 			float c = Vector3.Distance(proximal.target.position, targetDistalPosition);
 			Vector3 n = Vector3.Cross(targetDistalPosition - proximal.target.position, targetMiddlePosition - proximal.target.position);
 
-			Vector3 proximalUp = proximalPosition.rotation * Vector3.up;
-			proximal.target.rotation = Quaternion.LookRotation(targetDistalPosition - proximal.target.position, proximalUp);
+			Vector3 proximalForward = proximalPosition.rotation * Vector3.forward;
+			proximal.target.rotation = Quaternion.LookRotation(targetDistalPosition - proximal.target.position, -proximalForward);
 			proximal.target.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, middle.target.localPosition));
 			proximal.target.rotation = Quaternion.AngleAxis(-CosAngle(a, c, b), -n) * proximal.target.rotation;
 
-			Vector3 middlelUp = middlePosition.rotation * Vector3.up;
-			middle.target.rotation = Quaternion.LookRotation(targetDistalPosition - middle.target.position, middlelUp);
+			Vector3 middlelForward = middlePosition.rotation * Vector3.forward;
+			middle.target.rotation = Quaternion.LookRotation(targetDistalPosition - middle.target.position, -middlelForward);
 			middle.target.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, distal.target.localPosition));
 
 			distal.target.rotation = distalPosition.rotation;

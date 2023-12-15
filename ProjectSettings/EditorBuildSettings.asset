@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHandTrackingSample.unity
     guid: 636f881940a566046bdfadd4285e4e58
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 553dd7faa3821aa47a859b989b49c95d, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6b3957eb78c5ae241b802536f35caf47, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 83d72c87dceb24a4b8b41ac7737465d0, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9caad9a958bb0fb4a96e0e0b0d119273, type: 2}

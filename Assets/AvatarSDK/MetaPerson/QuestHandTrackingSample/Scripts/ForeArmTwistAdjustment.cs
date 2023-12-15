@@ -24,7 +24,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 		private Quaternion twist1LocalRotation;
 		private Quaternion twist2LocalRotation;
 
-		private Vector3 handInitialUpProj;
+		private Vector3 handInitialRightProj;
 
 		public ForeArmTwistAdjustment(Transform hand, Transform foreArm, Transform foreArmTwist1, Transform foreArmTwist2)
 		{
@@ -37,17 +37,17 @@ namespace AvatarSDK.MetaPerson.Oculus
 			twist2LocalRotation = foreArmTwist2.localRotation;
 
 			Vector3 armDirection = hand.position - foreArm.position;
-			handInitialUpProj = foreArm.worldToLocalMatrix * Vector3.ProjectOnPlane(hand.up, armDirection);
+			handInitialRightProj = foreArm.worldToLocalMatrix * Vector3.ProjectOnPlane(hand.right, armDirection);
 		}
 
 		public void Update(float twist1Coeff, float twist2Coeff)
 		{
 			Vector3 armDirection = hand.position - foreArm.position;
 
-			Vector3 handUpProj = Vector3.ProjectOnPlane(hand.up, armDirection);
-			Quaternion rot = Quaternion.FromToRotation(handInitialUpProj, handUpProj);
+			Vector3 handRightProj = Vector3.ProjectOnPlane(hand.right, armDirection);
+			Quaternion rot = Quaternion.FromToRotation(handInitialRightProj, handRightProj);
 
-			float angle = Vector3.SignedAngle(handInitialUpProj, foreArm.worldToLocalMatrix * handUpProj, foreArm.worldToLocalMatrix * armDirection);
+			float angle = Vector3.SignedAngle(handInitialRightProj, foreArm.worldToLocalMatrix * handRightProj, foreArm.worldToLocalMatrix * armDirection);
 			if (angle > 180)
 				angle = 360 - angle;
 			if (angle < -180)

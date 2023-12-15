@@ -20,15 +20,15 @@ namespace AvatarSDK.MetaPerson.Oculus
 	{
 		public List<BoneTarget> boneTargets = new List<BoneTarget>();
 
-		public void UpdatePositions(SkeletonPoseData data, Vector3 rootPosition, Quaternion rootRotation)
+		public void UpdatePositions(PoseData data, Vector3 rootPosition, Quaternion rootRotation)
 		{
 			Matrix4x4 rootMat = Matrix4x4.TRS(rootPosition, rootRotation, Vector3.one);
 			foreach (BoneTarget boneTarget in boneTargets)
 			{
 				Transform target = boneTarget.target;
-				target.rotation = data.BoneRotations[(int)boneTarget.boneId].FromFlippedZQuatf();
+				target.rotation = data.rotations[(int)boneTarget.boneId];
 				Vector3 offset = target.right * boneTarget.positionOffset.x + target.up * boneTarget.positionOffset.y + target.forward * boneTarget.positionOffset.z;
-				target.position = rootMat.MultiplyPoint(data.BoneTranslations[(int)boneTarget.boneId].FromFlippedZVector3f() + offset);
+				target.position = rootMat.MultiplyPoint(data.positions[(int)boneTarget.boneId] + offset);
 				target.rotation = rootRotation * target.rotation;
 			}
 		}

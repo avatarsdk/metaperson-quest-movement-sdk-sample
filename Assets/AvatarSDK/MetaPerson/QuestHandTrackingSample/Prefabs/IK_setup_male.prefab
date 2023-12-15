@@ -789,13 +789,13 @@ MonoBehaviour:
   boneTargets:
   - boneId: 19
     target: {fileID: 1932027542555594792}
-    positionOffset: {x: -0.01, y: 0.01, z: 0}
+    positionOffset: {x: 0, y: 0.015, z: 0.01}
   - boneId: 11
     target: {fileID: 1932027543058666621}
     positionOffset: {x: 0, y: 0, z: 0}
   - boneId: 45
     target: {fileID: 1932027541492551025}
-    positionOffset: {x: 0.01, y: -0.01, z: 0}
+    positionOffset: {x: 0, y: 0.015, z: 0.01}
   - boneId: 16
     target: {fileID: 1932027541856024886}
     positionOffset: {x: 0, y: 0, z: 0}

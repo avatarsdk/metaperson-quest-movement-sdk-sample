@@ -21,22 +21,22 @@ namespace AvatarSDK.MetaPerson.Oculus
 		public BoneTarget foreArm;
 		public BoneTarget hand;
 
-		public void UpdateBonesPositions(SkeletonPoseData data, Vector3 modelPosition, Quaternion modelRotation)
+		public void UpdateBonesPositions(PoseData data, Vector3 modelPosition, Quaternion modelRotation)
 		{
 			Matrix4x4 toModelMat = Matrix4x4.TRS(modelPosition, modelRotation, Vector3.one);
 			BonePosition armPosition = new BonePosition();
-			armPosition.rotation = modelRotation * data.BoneRotations[(int)arm.boneId].FromFlippedZQuatf();
-			armPosition.position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)arm.boneId].FromFlippedZVector3f());
+			armPosition.rotation = modelRotation * data.rotations[(int)arm.boneId];
+			armPosition.position = toModelMat.MultiplyPoint(data.positions[(int)arm.boneId]);
 			//armPosition.position += armPosition.rotation * arm.positionOffset;
 
 			BonePosition foreArmPosition = new BonePosition();
-			foreArmPosition.rotation = modelRotation * data.BoneRotations[(int)foreArm.boneId].FromFlippedZQuatf();
-			foreArmPosition.position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)foreArm.boneId].FromFlippedZVector3f());
+			foreArmPosition.rotation = modelRotation * data.rotations[(int)foreArm.boneId];
+			foreArmPosition.position = toModelMat.MultiplyPoint(data.positions[(int)foreArm.boneId]);
 			//foreArmPosition.position += foreArmPosition.rotation * foreArm.positionOffset;
 
 			BonePosition handPosition = new BonePosition();
-			handPosition.rotation = modelRotation * data.BoneRotations[(int)hand.boneId].FromFlippedZQuatf();
-			handPosition.position = toModelMat.MultiplyPoint(data.BoneTranslations[(int)hand.boneId].FromFlippedZVector3f());
+			handPosition.rotation = modelRotation * data.rotations[(int)hand.boneId];
+			handPosition.position = toModelMat.MultiplyPoint(data.positions[(int)hand.boneId]);
 			handPosition.position += handPosition.rotation * hand.positionOffset;
 			/*handPosition.rotation = data.BoneRotations[(int)hand.boneId].FromFlippedZQuatf();
 			Vector3 offset = (handPosition.rotation * Vector3.right) * hand.positionOffset.x +

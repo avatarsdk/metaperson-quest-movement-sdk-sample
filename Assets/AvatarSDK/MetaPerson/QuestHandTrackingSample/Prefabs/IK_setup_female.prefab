@@ -115,13 +115,13 @@ MonoBehaviour:
   boneTargets:
   - boneId: 19
     target: {fileID: 61086848021626741}
-    positionOffset: {x: -0.01, y: 0.01, z: 0}
+    positionOffset: {x: 0, y: 0, z: 0.005}
   - boneId: 11
     target: {fileID: 61086847518030624}
     positionOffset: {x: 0, y: 0, z: 0}
   - boneId: 45
     target: {fileID: 61086849088987692}
-    positionOffset: {x: 0.01, y: -0.01, z: 0}
+    positionOffset: {x: 0, y: 0, z: 0.005}
   - boneId: 16
     target: {fileID: 61086848714511979}
     positionOffset: {x: 0, y: 0, z: 0}

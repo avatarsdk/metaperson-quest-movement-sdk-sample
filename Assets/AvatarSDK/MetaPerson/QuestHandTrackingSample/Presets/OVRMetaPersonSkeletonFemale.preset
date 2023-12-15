@@ -345,9 +345,13 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: bindPose
+    propertyPath: alignFingersWithIK
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: skeletonMapping
     value: 
-    objectReference: {fileID: 11400000, guid: b5c21a381da59d949873feb7a32d2ed8, type: 2}
+    objectReference: {fileID: 11400000, guid: ff6e11850308b8d4198575329af305f5, type: 2}
   - target: {fileID: 0}
     propertyPath: transformsPositioner
     value: 

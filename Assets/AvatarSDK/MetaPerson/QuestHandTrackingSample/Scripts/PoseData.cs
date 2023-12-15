@@ -12,28 +12,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static OVRSkeleton;
 
 namespace AvatarSDK.MetaPerson.Oculus
 {
 	[Serializable]
-	public class BoneTarget
+	public class PoseData
 	{
-		public OVRBodyBoneId boneId;
-
-		public Transform target;
-
-		public Vector3 positionOffset;
-	}
-
-	internal class BonePosition
-	{
-		public Vector3 position;
-		public Quaternion rotation;
-	}
-
-	public interface IBonesPositioner
-	{
-		void UpdateBonesPositions(PoseData data, Vector3 modelPosition, Quaternion modelRotation);
+		public Vector3[] positions;
+		public Quaternion[] rotations;
 	}
 }

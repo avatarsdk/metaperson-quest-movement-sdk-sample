@@ -1,0 +1,366 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061d1f7e4c1b1094cb924394c328b314, type: 3}
+  m_Name: OVRToMetaPersonFemaleSkeletonMapping
+  m_EditorClassIdentifier: 
+  skeletonType: 1
+  initialRotations:
+  - boneId: 0
+    ovrInitialRotation: {x: -0, y: -0, z: -0, w: 1}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 1}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 1
+    ovrInitialRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+    invOVRInitialRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+    mpInitialRotation: {x: -0, y: -0, z: -0, w: 1}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneId: 2
+    ovrInitialRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+    invOVRInitialRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 3
+    ovrInitialRotation: {x: 0.47771445, y: -0.5213339, z: -0.47771445, w: 0.5213339}
+    invOVRInitialRotation: {x: -0.47771445, y: 0.5213339, z: 0.47771445, w: 0.5213339}
+    mpInitialRotation: {x: 0.008726298, y: -0, z: -0, w: 0.9999619}
+    invMPInitialRotation: {x: -0.008726298, y: 0, z: 0, w: 0.9999619}
+  - boneId: 4
+    ovrInitialRotation: {x: 0.47771445, y: -0.5213339, z: -0.47771445, w: 0.5213339}
+    invOVRInitialRotation: {x: -0.47771445, y: 0.5213339, z: 0.47771445, w: 0.5213339}
+    mpInitialRotation: {x: -0.07410876, y: -0, z: -0, w: 0.99725014}
+    invMPInitialRotation: {x: 0.07410876, y: 0, z: 0, w: 0.99725014}
+  - boneId: 5
+    ovrInitialRotation: {x: 0.5019987, y: -0.49799332, z: -0.5019987, w: 0.49799332}
+    invOVRInitialRotation: {x: -0.5019987, y: 0.49799332, z: 0.5019987, w: 0.49799332}
+    mpInitialRotation: {x: -0.06104876, y: -0, z: -0, w: 0.99813485}
+    invMPInitialRotation: {x: 0.06104876, y: 0, z: 0, w: 0.99813485}
+  - boneId: 6
+    ovrInitialRotation: {x: 0.47771445, y: -0.5213339, z: -0.47771445, w: 0.5213339}
+    invOVRInitialRotation: {x: -0.47771445, y: 0.5213339, z: 0.47771445, w: 0.5213339}
+    mpInitialRotation: {x: -0.000000007450581, y: -9.392195e-18, z: -4.925671e-17, w: 1}
+    invMPInitialRotation: {x: 0.000000007450581, y: 9.392195e-18, z: 4.925671e-17, w: 1}
+  - boneId: 7
+    ovrInitialRotation: {x: 0.5019987, y: -0.49799332, z: -0.5019987, w: 0.49799332}
+    invOVRInitialRotation: {x: -0.5019987, y: 0.49799332, z: 0.5019987, w: 0.49799332}
+    mpInitialRotation: {x: -0.06104874, y: -8.924336e-18, z: -1.1748072e-16, w: 0.99813485}
+    invMPInitialRotation: {x: 0.06104874, y: 8.924336e-18, z: 1.1748072e-16, w: 0.99813485}
+  - boneId: 8
+    ovrInitialRotation: {x: 0.65557426, y: -0.21932255, z: 0.1834582, w: 0.69890136}
+    invOVRInitialRotation: {x: -0.65557426, y: 0.21932255, z: -0.1834582, w: 0.69890136}
+    mpInitialRotation: {x: 0.5349519, y: -0.4564928, z: 0.4331957, w: 0.56372184}
+    invMPInitialRotation: {x: -0.5349519, y: 0.4564928, z: -0.4331957, w: 0.56372184}
+  - boneId: 9
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 10
+    ovrInitialRotation: {x: 0.48656905, y: 0.024228454, z: 0.021272302, w: 0.8730471}
+    invOVRInitialRotation: {x: -0.48656905, y: -0.024228454, z: -0.021272302, w: 0.8730471}
+    mpInitialRotation: {x: 0.5129178, y: -0.48673978, z: 0.5129171, w: 0.48674023}
+    invMPInitialRotation: {x: -0.5129178, y: 0.48673978, z: -0.5129171, w: 0.48674023}
+  - boneId: 11
+    ovrInitialRotation: {x: 0.48060328, y: 0.11619228, z: -0.101514876, w: 0.86325836}
+    invOVRInitialRotation: {x: -0.48060328, y: -0.11619228, z: 0.101514876, w: 0.86325836}
+    mpInitialRotation: {x: 0.5533384, y: -0.43146902, z: 0.4094493, w: 0.58309734}
+    invMPInitialRotation: {x: -0.5533384, y: 0.43146902, z: -0.4094493, w: 0.58309734}
+  - boneId: 12
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 13
+    ovrInitialRotation: {x: -0.6989045, y: 0.18346608, z: 0.21931295, w: 0.6555722}
+    invOVRInitialRotation: {x: 0.6989045, y: -0.18346608, z: -0.21931295, w: 0.6555722}
+    mpInitialRotation: {x: 0.5637219, y: 0.4331955, z: -0.45649278, w: 0.53495204}
+    invMPInitialRotation: {x: -0.5637219, y: -0.4331955, z: 0.45649278, w: 0.53495204}
+  - boneId: 14
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 15
+    ovrInitialRotation: {x: -0.87304246, y: 0.02126836, z: -0.024227805, w: 0.48657748}
+    invOVRInitialRotation: {x: 0.87304246, y: -0.02126836, z: 0.024227805, w: 0.48657748}
+    mpInitialRotation: {x: 0.5129173, y: 0.48674014, z: -0.51291716, w: 0.48674038}
+    invMPInitialRotation: {x: -0.5129173, y: -0.48674014, z: 0.51291716, w: 0.48674038}
+  - boneId: 16
+    ovrInitialRotation: {x: -0.86325324, y: -0.10151599, z: -0.11619221, w: 0.48061204}
+    invOVRInitialRotation: {x: 0.86325324, y: 0.10151599, z: 0.11619221, w: 0.48061204}
+    mpInitialRotation: {x: 0.5533387, y: 0.43146893, z: -0.40944886, w: 0.58309746}
+    invMPInitialRotation: {x: -0.5533387, y: -0.43146893, z: 0.40944886, w: 0.58309746}
+  - boneId: 17
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 18
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 19
+    ovrInitialRotation: {x: 0.99891496, y: -0.01160948, z: -0.0436161, w: -0.011510417}
+    invOVRInitialRotation: {x: -0.99891496, y: 0.01160948, z: 0.0436161, w: -0.011510417}
+    mpInitialRotation: {x: 0.5075082, y: -0.49005565, z: 0.46504605, w: 0.5348022}
+    invMPInitialRotation: {x: -0.5075082, y: 0.49005565, z: -0.46504605, w: 0.5348022}
+  - boneId: 20
+    ovrInitialRotation: {x: 0.59584945, y: -0.0679069, z: -0.5634781, w: -0.5681946}
+    invOVRInitialRotation: {x: -0.59584945, y: 0.0679069, z: 0.5634781, w: -0.5681946}
+    mpInitialRotation: {x: 0.8797658, y: -0.17454237, z: 0.055033214, w: 0.43876976}
+    invMPInitialRotation: {x: -0.8797658, y: 0.17454237, z: -0.055033214, w: 0.43876976}
+  - boneId: 21
+    ovrInitialRotation: {x: 0.6971519, y: -0.0058749467, z: -0.460498, w: -0.5494424}
+    invOVRInitialRotation: {x: -0.6971519, y: 0.0058749467, z: 0.460498, w: -0.5494424}
+    mpInitialRotation: {x: 0.8085044, y: -0.17918389, z: 0.31035623, w: 0.46679017}
+    invMPInitialRotation: {x: -0.8085044, y: 0.17918389, z: -0.31035623, w: 0.46679017}
+  - boneId: 22
+    ovrInitialRotation: {x: 0.6158817, y: -0.04918948, z: -0.53397846, w: -0.5771809}
+    invOVRInitialRotation: {x: -0.6158817, y: 0.04918948, z: 0.53397846, w: -0.5771809}
+    mpInitialRotation: {x: 0.7895721, y: -0.17047796, z: 0.25274447, w: 0.53257287}
+    invMPInitialRotation: {x: -0.7895721, y: 0.17047796, z: -0.25274447, w: 0.53257287}
+  - boneId: 23
+    ovrInitialRotation: {x: 0.6158817, y: -0.04918948, z: -0.53397846, w: -0.5771809}
+    invOVRInitialRotation: {x: -0.6158817, y: 0.04918948, z: 0.53397846, w: -0.5771809}
+    mpInitialRotation: {x: 0.7929864, y: -0.16706328, z: 0.2500284, w: 0.52985746}
+    invMPInitialRotation: {x: -0.7929864, y: 0.16706328, z: -0.2500284, w: 0.52985746}
+  - boneId: 24
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 25
+    ovrInitialRotation: {x: 0.9912472, y: -0.0076244175, z: -0.12537223, w: -0.04066266}
+    invOVRInitialRotation: {x: -0.9912472, y: 0.0076244175, z: 0.12537223, w: -0.04066266}
+    mpInitialRotation: {x: 0.5572077, y: -0.43533823, z: 0.43533918, w: 0.5572079}
+    invMPInitialRotation: {x: -0.5572077, y: 0.43533823, z: -0.43533918, w: 0.5572079}
+  - boneId: 26
+    ovrInitialRotation: {x: 0.9884026, y: 0.1182379, z: -0.09064111, w: -0.029408842}
+    invOVRInitialRotation: {x: -0.9884026, y: -0.1182379, z: 0.09064111, w: -0.029408842}
+    mpInitialRotation: {x: 0.6036513, y: -0.39573935, z: 0.50652415, w: 0.47162437}
+    invMPInitialRotation: {x: -0.6036513, y: 0.39573935, z: -0.50652415, w: 0.47162437}
+  - boneId: 27
+    ovrInitialRotation: {x: 0.99679196, y: 0.04733008, z: -0.063746676, w: -0.010128781}
+    invOVRInitialRotation: {x: -0.99679196, y: -0.04733008, z: 0.063746676, w: -0.010128781}
+    mpInitialRotation: {x: 0.6038798, y: -0.39596775, z: 0.4978008, w: 0.48034772}
+    invMPInitialRotation: {x: -0.6038798, y: 0.39596775, z: -0.4978008, w: 0.48034772}
+  - boneId: 28
+    ovrInitialRotation: {x: 0.99679196, y: 0.04733008, z: -0.063746676, w: -0.010128781}
+    invOVRInitialRotation: {x: -0.99679196, y: -0.04733008, z: 0.063746676, w: -0.010128781}
+    mpInitialRotation: {x: 0.6038798, y: -0.39596775, z: 0.4978008, w: 0.48034772}
+    invMPInitialRotation: {x: -0.6038798, y: 0.39596775, z: -0.4978008, w: 0.48034772}
+  - boneId: 29
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 30
+    ovrInitialRotation: {x: 0.9964043, y: 0.06255975, z: -0.057126105, w: -0.0013196468}
+    invOVRInitialRotation: {x: -0.9964043, y: -0.06255975, z: 0.057126105, w: -0.0013196468}
+    mpInitialRotation: {x: 0.5587639, y: -0.4412262, z: 0.49871647, w: 0.49435294}
+    invMPInitialRotation: {x: -0.5587639, y: 0.4412262, z: -0.49871647, w: 0.49435294}
+  - boneId: 31
+    ovrInitialRotation: {x: 0.9982464, y: 0.055474475, z: -0.019068658, w: 0.007995665}
+    invOVRInitialRotation: {x: -0.9982464, y: -0.055474475, z: 0.019068658, w: 0.007995665}
+    mpInitialRotation: {x: 0.53666884, y: -0.46255988, z: 0.5182554, w: 0.47899547}
+    invMPInitialRotation: {x: -0.53666884, y: 0.46255988, z: -0.5182554, w: 0.47899547}
+  - boneId: 32
+    ovrInitialRotation: {x: 0.9982909, y: -0.036951944, z: -0.01172328, w: 0.043733373}
+    invOVRInitialRotation: {x: -0.9982909, y: 0.036951944, z: 0.01172328, w: 0.043733373}
+    mpInitialRotation: {x: 0.5751972, y: -0.41445413, z: 0.5652451, w: 0.4217522}
+    invMPInitialRotation: {x: -0.5751972, y: 0.41445413, z: -0.5652451, w: 0.4217522}
+  - boneId: 33
+    ovrInitialRotation: {x: 0.9982909, y: -0.036951944, z: -0.01172328, w: 0.043733373}
+    invOVRInitialRotation: {x: -0.9982909, y: 0.036951944, z: 0.01172328, w: 0.043733373}
+    mpInitialRotation: {x: 0.5751972, y: -0.41445413, z: 0.5652451, w: 0.4217522}
+    invMPInitialRotation: {x: -0.5751972, y: 0.41445413, z: -0.5652451, w: 0.4217522}
+  - boneId: 34
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 35
+    ovrInitialRotation: {x: 0.9959694, y: 0.07455091, z: 0.018426389, w: 0.04634638}
+    invOVRInitialRotation: {x: -0.9959694, y: -0.07455091, z: -0.018426389, w: 0.04634638}
+    mpInitialRotation: {x: 0.52624893, y: -0.46955577, z: 0.54494715, w: 0.45344532}
+    invMPInitialRotation: {x: -0.52624893, y: 0.46955577, z: -0.54494715, w: 0.45344532}
+  - boneId: 36
+    ovrInitialRotation: {x: 0.9909438, y: 0.10507944, z: 0.024042934, w: 0.08007036}
+    invOVRInitialRotation: {x: -0.9909438, y: -0.10507944, z: -0.024042934, w: 0.08007036}
+    mpInitialRotation: {x: 0.5393003, y: -0.4521441, z: 0.56336117, w: 0.43283436}
+    invMPInitialRotation: {x: -0.5393003, y: 0.4521441, z: -0.56336117, w: 0.43283436}
+  - boneId: 37
+    ovrInitialRotation: {x: 0.9932585, y: 0.077779084, z: -0.0025207102, w: 0.08592124}
+    invOVRInitialRotation: {x: -0.9932585, y: -0.077779084, z: 0.0025207102, w: 0.08592124}
+    mpInitialRotation: {x: 0.5479966, y: -0.4478082, z: 0.5432356, w: 0.4517337}
+    invMPInitialRotation: {x: -0.5479966, y: 0.4478082, z: -0.5432356, w: 0.4517337}
+  - boneId: 38
+    ovrInitialRotation: {x: 0.9932585, y: 0.077779084, z: -0.0025207102, w: 0.08592124}
+    invOVRInitialRotation: {x: -0.9932585, y: -0.077779084, z: 0.0025207102, w: 0.08592124}
+    mpInitialRotation: {x: 0.5479966, y: -0.4478082, z: 0.5432356, w: 0.45173374}
+    invMPInitialRotation: {x: -0.5479966, y: 0.4478082, z: -0.5432356, w: 0.45173374}
+  - boneId: 39
+    ovrInitialRotation: {x: 0.9757081, y: 0.014468312, z: 0.09577553, w: 0.1964993}
+    invOVRInitialRotation: {x: -0.9757081, y: -0.014468312, z: -0.09577553, w: 0.1964993}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 40
+    ovrInitialRotation: {x: 0.9801684, y: 0.037168905, z: 0.16464576, w: 0.10383111}
+    invOVRInitialRotation: {x: -0.9801684, y: -0.037168905, z: -0.16464576, w: 0.10383111}
+    mpInitialRotation: {x: 0.43588388, y: -0.5404118, z: 0.6054812, w: 0.38904142}
+    invMPInitialRotation: {x: -0.43588388, y: 0.5404118, z: -0.6054812, w: 0.38904142}
+  - boneId: 41
+    ovrInitialRotation: {x: 0.97859055, y: 0.02849488, z: 0.14720497, w: 0.1409964}
+    invOVRInitialRotation: {x: -0.97859055, y: -0.02849488, z: -0.14720497, w: 0.1409964}
+    mpInitialRotation: {x: 0.45073318, y: -0.5291914, z: 0.59814316, w: 0.39877498}
+    invMPInitialRotation: {x: -0.45073318, y: 0.5291914, z: -0.59814316, w: 0.39877498}
+  - boneId: 42
+    ovrInitialRotation: {x: 0.9851376, y: -0.0018903613, z: 0.10223442, w: 0.13801938}
+    invOVRInitialRotation: {x: -0.9851376, y: 0.0018903613, z: -0.10223442, w: 0.13801938}
+    mpInitialRotation: {x: 0.47334647, y: -0.50388426, z: 0.60585624, w: 0.3936782}
+    invMPInitialRotation: {x: -0.47334647, y: 0.50388426, z: -0.60585624, w: 0.3936782}
+  - boneId: 43
+    ovrInitialRotation: {x: 0.9851376, y: -0.0018903613, z: 0.10223442, w: 0.13801938}
+    invOVRInitialRotation: {x: -0.9851376, y: 0.0018903613, z: -0.10223442, w: 0.13801938}
+    mpInitialRotation: {x: 0.47334647, y: -0.50388426, z: 0.60585624, w: 0.3936782}
+    invMPInitialRotation: {x: -0.47334647, y: 0.50388426, z: -0.60585624, w: 0.3936782}
+  - boneId: 44
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 45
+    ovrInitialRotation: {x: 0.011533797, y: -0.04362303, z: 0.011644661, w: 0.9989139}
+    invOVRInitialRotation: {x: -0.011533797, y: 0.04362303, z: -0.011644661, w: 0.9989139}
+    mpInitialRotation: {x: 0.5075086, y: 0.4900557, z: -0.46504536, w: 0.5348022}
+    invMPInitialRotation: {x: -0.5075086, y: -0.4900557, z: 0.46504536, w: 0.5348022}
+  - boneId: 46
+    ovrInitialRotation: {x: 0.56821364, y: -0.5634786, z: 0.067926794, w: 0.59582853}
+    invOVRInitialRotation: {x: -0.56821364, y: 0.5634786, z: -0.067926794, w: 0.59582853}
+    mpInitialRotation: {x: 0.87976587, y: 0.17454234, z: -0.05503302, w: 0.43876967}
+    invMPInitialRotation: {x: -0.87976587, y: -0.17454234, z: 0.05503302, w: 0.43876967}
+  - boneId: 47
+    ovrInitialRotation: {x: 0.54932535, y: -0.46011278, z: 0.0062752664, w: 0.69749486}
+    invOVRInitialRotation: {x: -0.54932535, y: 0.46011278, z: -0.0062752664, w: 0.69749486}
+    mpInitialRotation: {x: 0.80850464, y: 0.17918411, z: -0.31035572, w: 0.46679014}
+    invMPInitialRotation: {x: -0.80850464, y: -0.17918411, z: 0.31035572, w: 0.46679014}
+  - boneId: 48
+    ovrInitialRotation: {x: 0.5771419, y: -0.53357804, z: 0.04958245, w: 0.6162337}
+    invOVRInitialRotation: {x: -0.5771419, y: 0.53357804, z: -0.04958245, w: 0.6162337}
+    mpInitialRotation: {x: 0.78957236, y: 0.17047812, z: -0.25274387, w: 0.5325729}
+    invMPInitialRotation: {x: -0.78957236, y: -0.17047812, z: 0.25274387, w: 0.5325729}
+  - boneId: 49
+    ovrInitialRotation: {x: -0.53357816, y: -0.5771394, z: 0.61623573, w: -0.04958032}
+    invOVRInitialRotation: {x: 0.53357816, y: 0.5771394, z: -0.61623573, w: -0.04958032}
+    mpInitialRotation: {x: 0.7908754, y: 0.17932305, z: -0.25140202, w: 0.5283528}
+    invMPInitialRotation: {x: -0.7908754, y: -0.17932305, z: 0.25140202, w: 0.5283528}
+  - boneId: 50
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 51
+    ovrInitialRotation: {x: 0.040684596, y: -0.12537454, z: 0.0076337606, w: 0.9912457}
+    invOVRInitialRotation: {x: -0.040684596, y: 0.12537454, z: -0.0076337606, w: 0.9912457}
+    mpInitialRotation: {x: 0.5609859, y: 0.4304589, z: -0.43045914, w: 0.5609859}
+    invMPInitialRotation: {x: -0.5609859, y: -0.4304589, z: 0.43045914, w: 0.5609859}
+  - boneId: 52
+    ovrInitialRotation: {x: 0.029430449, y: -0.09065138, z: -0.11822949, w: 0.98840207}
+    invOVRInitialRotation: {x: -0.029430449, y: 0.09065138, z: 0.11822949, w: 0.98840207}
+    mpInitialRotation: {x: 0.60774446, y: 0.39130402, z: -0.50995755, w: 0.46633846}
+    invMPInitialRotation: {x: -0.60774446, y: -0.39130402, z: 0.50995755, w: 0.46633846}
+  - boneId: 53
+    ovrInitialRotation: {x: 0.0101490915, y: -0.06375848, z: -0.047321364, w: 0.9967915}
+    invOVRInitialRotation: {x: -0.0101490915, y: 0.06375848, z: 0.047321364, w: 0.9967915}
+    mpInitialRotation: {x: 0.6039374, y: 0.39602476, z: -0.4934369, w: 0.4847107}
+    invMPInitialRotation: {x: -0.6039374, y: -0.39602476, z: 0.4934369, w: 0.4847107}
+  - boneId: 54
+    ovrInitialRotation: {x: 0.0101490915, y: -0.06375848, z: -0.047321364, w: 0.9967915}
+    invOVRInitialRotation: {x: -0.0101490915, y: 0.06375848, z: 0.047321364, w: 0.9967915}
+    mpInitialRotation: {x: 0.6039374, y: 0.39602476, z: -0.4934369, w: 0.4847107}
+    invMPInitialRotation: {x: -0.6039374, y: -0.39602476, z: 0.4934369, w: 0.4847107}
+  - boneId: 55
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 56
+    ovrInitialRotation: {x: 0.0013439953, y: -0.057139546, z: -0.062390953, w: 0.99641424}
+    invOVRInitialRotation: {x: -0.0013439953, y: 0.057139546, z: 0.062390953, w: 0.99641424}
+    mpInitialRotation: {x: 0.55876464, y: 0.44122657, z: -0.49871537, w: 0.49435288}
+    invMPInitialRotation: {x: -0.55876464, y: -0.44122657, z: 0.49871537, w: 0.49435288}
+  - boneId: 57
+    ovrInitialRotation: {x: -0.007977337, y: -0.019081935, z: -0.055316612, w: 0.99825495}
+    invOVRInitialRotation: {x: 0.007977337, y: 0.019081935, z: 0.055316612, w: 0.99825495}
+    mpInitialRotation: {x: 0.53875417, y: 0.46029449, z: -0.520268, w: 0.4766494}
+    invMPInitialRotation: {x: -0.53875417, y: -0.46029449, z: 0.520268, w: 0.4766494}
+  - boneId: 58
+    ovrInitialRotation: {x: -0.0437174, y: -0.01174362, z: 0.03710933, w: 0.9982856}
+    invOVRInitialRotation: {x: 0.0437174, y: 0.01174362, z: -0.03710933, w: 0.9982856}
+    mpInitialRotation: {x: 0.57335186, y: 0.41691664, z: -0.56343037, w: 0.42425814}
+    invMPInitialRotation: {x: -0.57335186, y: -0.41691664, z: 0.56343037, w: 0.42425814}
+  - boneId: 59
+    ovrInitialRotation: {x: -0.04371731, y: -0.011743635, z: 0.037109345, w: 0.9982856}
+    invOVRInitialRotation: {x: 0.04371731, y: 0.011743635, z: -0.037109345, w: 0.9982856}
+    mpInitialRotation: {x: 0.57335186, y: 0.41691664, z: -0.56343037, w: 0.42425814}
+    invMPInitialRotation: {x: -0.57335186, y: -0.41691664, z: 0.56343037, w: 0.42425814}
+  - boneId: 60
+    ovrInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invOVRInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 61
+    ovrInitialRotation: {x: -0.046330124, y: 0.018424898, z: -0.07454629, w: 0.9959705}
+    invOVRInitialRotation: {x: 0.046330124, y: -0.018424898, z: 0.07454629, w: 0.9959705}
+    mpInitialRotation: {x: 0.5266295, y: 0.46993607, z: -0.5405996, w: 0.45779228}
+    invMPInitialRotation: {x: -0.5266295, y: -0.46993607, z: 0.5405996, w: 0.45779228}
+  - boneId: 62
+    ovrInitialRotation: {x: -0.08005421, y: 0.024040148, z: -0.10507062, w: 0.99094594}
+    invOVRInitialRotation: {x: 0.08005421, y: -0.024040148, z: 0.10507062, w: 0.99094594}
+    mpInitialRotation: {x: 0.53985155, y: 0.45269492, z: -0.5590316, w: 0.43716303}
+    invMPInitialRotation: {x: -0.53985155, y: -0.45269492, z: 0.5590316, w: 0.43716303}
+  - boneId: 63
+    ovrInitialRotation: {x: -0.08590464, y: -0.0025239736, z: -0.07777083, w: 0.9932604}
+    invOVRInitialRotation: {x: 0.08590464, y: 0.0025239736, z: 0.07777083, w: 0.9932604}
+    mpInitialRotation: {x: 0.5487198, y: 0.44853088, z: -0.5345382, w: 0.46043038}
+    invMPInitialRotation: {x: -0.5487198, y: -0.44853088, z: 0.5345382, w: 0.46043038}
+  - boneId: 64
+    ovrInitialRotation: {x: -0.08590464, y: -0.0025239736, z: -0.07777083, w: 0.9932604}
+    invOVRInitialRotation: {x: 0.08590464, y: 0.0025239736, z: 0.07777083, w: 0.9932604}
+    mpInitialRotation: {x: 0.5487198, y: 0.44853088, z: -0.5345382, w: 0.46043038}
+    invMPInitialRotation: {x: -0.5487198, y: -0.44853088, z: 0.5345382, w: 0.46043038}
+  - boneId: 65
+    ovrInitialRotation: {x: -0.19648145, y: 0.09576188, z: -0.014432251, w: 0.9757133}
+    invOVRInitialRotation: {x: 0.19648145, y: -0.09576188, z: 0.014432251, w: 0.9757133}
+    mpInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+    invMPInitialRotation: {x: 0, y: 0, z: 0, w: 0}
+  - boneId: 66
+    ovrInitialRotation: {x: -0.1038159, y: 0.16464059, z: -0.03716913, w: 0.9801707}
+    invOVRInitialRotation: {x: 0.1038159, y: -0.16464059, z: 0.03716913, w: 0.9801707}
+    mpInitialRotation: {x: 0.43508998, y: 0.54395604, z: -0.59884876, w: 0.3952077}
+    invMPInitialRotation: {x: -0.43508998, y: -0.54395604, z: 0.59884876, w: 0.3952077}
+  - boneId: 67
+    ovrInitialRotation: {x: -0.1409798, y: 0.14720365, z: -0.028492332, w: 0.9785931}
+    invOVRInitialRotation: {x: 0.1409798, y: -0.14720365, z: 0.028492332, w: 0.9785931}
+    mpInitialRotation: {x: 0.44547498, y: 0.53697604, z: -0.59116393, w: 0.40464064}
+    invMPInitialRotation: {x: -0.44547498, y: -0.53697604, z: 0.59116393, w: 0.40464064}
+  - boneId: 68
+    ovrInitialRotation: {x: -0.13800271, y: 0.10223277, z: 0.001892224, w: 0.9851397}
+    invOVRInitialRotation: {x: 0.13800271, y: -0.10223277, z: -0.001892224, w: 0.9851397}
+    mpInitialRotation: {x: 0.47425422, y: 0.504792, z: -0.6015873, w: 0.39794624}
+    invMPInitialRotation: {x: -0.47425422, y: -0.504792, z: 0.6015873, w: 0.39794624}
+  - boneId: 69
+    ovrInitialRotation: {x: -0.13800271, y: 0.10223277, z: 0.001892224, w: 0.9851397}
+    invOVRInitialRotation: {x: 0.13800271, y: -0.10223277, z: -0.001892224, w: 0.9851397}
+    mpInitialRotation: {x: 0.47425422, y: 0.504792, z: -0.6015873, w: 0.39794624}
+    invMPInitialRotation: {x: -0.47425422, y: -0.504792, z: 0.6015873, w: 0.39794624}
