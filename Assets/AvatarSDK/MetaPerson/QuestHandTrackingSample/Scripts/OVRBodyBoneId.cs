@@ -88,5 +88,14 @@ namespace AvatarSDK.MetaPerson.Oculus
 		Body_RightHandLittleDistal = OVRPlugin.BoneId.Body_RightHandLittleDistal,
 		Body_RightHandLittleTip = OVRPlugin.BoneId.Body_RightHandLittleTip,
 		Body_End = OVRPlugin.BoneId.Body_End,
+		
+		LowerBody_Start = Body_End,
+		LowerBody_LeftLegUpper = Body_End + 0,
+		LowerBody_LeftLegLower = Body_End + 1,
+		LowerBody_LeftFoot = Body_End + 2,
+		LowerBody_RightLegUpper = Body_End + 3,
+		LowerBody_RightLegLower = Body_End + 4,
+		LowerBody_RightFoot = Body_End + 5,
+		LowerBody_End = Body_End + 6
 	}
 }

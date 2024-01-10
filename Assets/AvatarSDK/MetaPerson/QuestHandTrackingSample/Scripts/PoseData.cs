@@ -18,6 +18,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 	[Serializable]
 	public class PoseData
 	{
+		public bool[] isValidData;
 		public Vector3[] positions;
 		public Quaternion[] rotations;
 	}

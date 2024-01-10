@@ -33,16 +33,16 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public List<BoneInitialRotations> initialRotations = new List<BoneInitialRotations>();
 
-		private Dictionary<OVRPlugin.BoneId, BoneInitialRotations> initialRotationsDict = new Dictionary<OVRPlugin.BoneId, BoneInitialRotations>();
+		private Dictionary<OVRBodyBoneId, BoneInitialRotations> initialRotationsDict = new Dictionary<OVRBodyBoneId, BoneInitialRotations>();
 
 		public void MapBonesRotations(Transform[] ovrTransforms, Transform[] mpTransforms)
 		{
 			initialRotations.Clear();
-			for(int i=(int)OVRPlugin.BoneId.Body_Root; i<(int)OVRPlugin.BoneId.Body_End; i++)
+			for(int i=(int)OVRBodyBoneId.Body_Root; i<(int)OVRBodyBoneId.LowerBody_End; i++)
 			{
-				OVRPlugin.BoneId boneId = (OVRPlugin.BoneId)i;
+				OVRBodyBoneId boneId = (OVRBodyBoneId)i;
 				BoneInitialRotations boneRotations = new BoneInitialRotations();
-				boneRotations.boneId = (OVRBodyBoneId)boneId;
+				boneRotations.boneId = boneId;
 
 				string ovrBoneName = BonesMapping.boneIdToOVRBones[boneId];
 				if (!string.IsNullOrEmpty(ovrBoneName))
@@ -71,7 +71,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 			BuildRotationsDict();
 		}
 
-		public Quaternion OVRToMPRotation(OVRPlugin.BoneId boneId, Quaternion ovrRotation)
+		public Quaternion OVRToMPRotation(OVRBodyBoneId boneId, Quaternion ovrRotation)
 		{
 			if (initialRotationsDict.Count == 0)
 				BuildRotationsDict();
@@ -83,7 +83,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 				return ovrRotation;
 		}
 
-		public Quaternion MPToOVRRotation(OVRPlugin.BoneId boneId, Quaternion mpRotation)
+		public Quaternion MPToOVRRotation(OVRBodyBoneId boneId, Quaternion mpRotation)
 		{
 			if (initialRotationsDict.Count == 0)
 				BuildRotationsDict();
@@ -99,7 +99,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 		{
 			initialRotationsDict.Clear();
 			foreach (BoneInitialRotations rotations in initialRotations)
-				initialRotationsDict.Add((OVRPlugin.BoneId)rotations.boneId, rotations);
+				initialRotationsDict.Add(rotations.boneId, rotations);
 		}
 	}
 }

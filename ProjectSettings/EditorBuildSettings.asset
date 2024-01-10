@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHandTrackingSample.unity
     guid: 636f881940a566046bdfadd4285e4e58
+  - enabled: 0
+    path: Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHipPinningSample.unity
+    guid: e72dd2aa8fa15ce4b9fdf808d1c939b0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 83d72c87dceb24a4b8b41ac7737465d0, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9caad9a958bb0fb4a96e0e0b0d119273, type: 2}

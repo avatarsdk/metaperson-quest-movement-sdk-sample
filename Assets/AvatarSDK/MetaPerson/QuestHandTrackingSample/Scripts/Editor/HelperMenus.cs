@@ -22,7 +22,7 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		[MenuItem("GameObject/Movement/Setup Character for Body Tracking/Format: MetaPerson Male")]
 		private static void SetupMetaPersonMaleForBodyTracking()
 		{
-			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRMetaPersonSkeletonMale.preset";
+			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRToMetaPersonSkeletonSyncMale.preset";
 			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Prefabs/IK_setup_male.prefab";
 			SetupMetaPersonForBodyTracking(skeletonPresetPath, ikPrefabPath);
 		}
@@ -30,7 +30,7 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		[MenuItem("GameObject/Movement/Setup Character for Body Tracking/Format: MetaPerson Female")]
 		private static void SetupMetaPersonFemaleForBodyTracking()
 		{
-			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRMetaPersonSkeletonFemale.preset";
+			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRToMetaPersonSkeletonSyncFemale.preset";
 			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Prefabs/IK_setup_female.prefab";
 			SetupMetaPersonForBodyTracking(skeletonPresetPath, ikPrefabPath);
 		}
@@ -46,22 +46,20 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 				Undo.RegisterCreatedObjectUndo(bodyComp, "Add OVRBody component");
 			}
 
-			OVRMetaPersonSkeleton metaPersonSkeleton = activeGameObject.GetComponent<OVRMetaPersonSkeleton>();
-			if (!metaPersonSkeleton)
+			OVRToMetaPersonSkeletonSync skeletonSync = activeGameObject.GetComponent<OVRToMetaPersonSkeletonSync>();
+			if (!skeletonSync)
 			{
-				metaPersonSkeleton = activeGameObject.AddComponent<OVRMetaPersonSkeleton>();
+				skeletonSync = activeGameObject.AddComponent<OVRToMetaPersonSkeletonSync>();
 				Preset skeletonPreset = AssetDatabase.LoadAssetAtPath<Preset>(skeletonPresetPath);
 				if (skeletonPreset != null)
-					skeletonPreset.ApplyTo(metaPersonSkeleton);
-				metaPersonSkeleton.MapBones();
-				Undo.RegisterCreatedObjectUndo(metaPersonSkeleton, "Add OVRMetaPersonSkeleton component");
+					skeletonPreset.ApplyTo(skeletonSync);
+				Undo.RegisterCreatedObjectUndo(skeletonSync, "Add OVRMetaPersonSkeleton component");
 			}
 
 			GameObject ikPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(ikPrefabPath);
 			GameObject ikSetupObject = Object.Instantiate(ikPrefab);
 			ikSetupObject.name = "IK";
 			ikSetupObject.transform.SetParent(activeGameObject.transform);
-			metaPersonSkeleton.transformsPositioner = ikSetupObject.GetComponent<OVRTransformsPositioner>();
 			Undo.RegisterCreatedObjectUndo(ikSetupObject, "Add IK prefab");
 
 			Transform[] transforms = activeGameObject.GetComponentsInChildren<Transform>();
@@ -105,9 +103,9 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		{
 			foreach(FingerBonesPositioner positioner in fingerBonesPositioners)
 			{
-				positioner.proximal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.proximal.boneId]);
-				positioner.middle.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.middle.boneId]);
-				positioner.distal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[(OVRPlugin.BoneId)positioner.distal.boneId]);
+				positioner.proximal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[positioner.proximal.boneId]);
+				positioner.middle.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[positioner.middle.boneId]);
+				positioner.distal.target = bones.FirstOrDefault(t => t.name == BonesMapping.boneIdToMetaPersonBones[positioner.distal.boneId]);
 			}
 		}
 	}

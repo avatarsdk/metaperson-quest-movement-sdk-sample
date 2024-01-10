@@ -26,7 +26,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 		public Vector3 positionOffset;
 	}
 
-	internal class BonePosition
+	public class BonePosition
 	{
 		public Vector3 position;
 		public Quaternion rotation;
