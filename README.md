@@ -23,7 +23,7 @@ The sample demonstrates how to use [Body Tracking from the Movement SDK](https:/
 
 ### OVRToMetaPersonSkeletonSync
 This component applies Body Tracking data to a MetaPerson avatar. 
-![OVRToMetaPersonSkeletonSync](./Documentation/Images/OVRToMetaPersonSkeletonSync "OVRToMetaPersonSkeletonSync")
+![OVRToMetaPersonSkeletonSync](./Documentation/Images/OVRToMetaPersonSkeletonSync.JPG "OVRToMetaPersonSkeletonSync")
 
 Key properties:
 - **Twist 1 Coeff** and **Twist 2 Coeff** impact on skin twist in a region between the forearm and the hand.
