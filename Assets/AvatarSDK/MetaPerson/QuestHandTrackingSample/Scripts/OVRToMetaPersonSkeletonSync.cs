@@ -8,6 +8,7 @@
 * Written by Itseez3D, Inc. <support@avatarsdk.com>, January 2024
 */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,13 @@ using static OVRSkeleton;
 
 namespace AvatarSDK.MetaPerson.Oculus
 {
+	[Serializable]
+	public class BoneTransform
+	{
+		public OVRBodyBoneId boneId;
+		public Transform transform;
+	}
+
 	public class OVRToMetaPersonSkeletonSync : MonoBehaviour
 	{
 		[Range(0.0f, 1.0f)]
@@ -25,15 +33,15 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public bool moveHips = true;
 
-		public bool alignFingersWithIK = false;
-
 		public SkeletonMapping skeletonMapping;
 
-		public GameObject ovrSkeletonObjectToSync;
+		public bool syncBonesWithOtherModel = false;
+
+		public GameObject sourceBonesModel = null;
+
+		public List<BoneTransform> sourceBones = new List<BoneTransform>();
 
 		private Transform[] mpBones;
-
-		private Transform[] ovrBones;
 
 		private IOVRSkeletonDataProvider skeletonDataProvider;
 
@@ -43,7 +51,6 @@ namespace AvatarSDK.MetaPerson.Oculus
 		private ForeArmTwistAdjustment rightHandTwistAdjustment;
 
 		private List<TwoBoneIK> bonesIKs = new List<TwoBoneIK>();
-		private List<IBonesPositioner> bonesPositioners = new List<IBonesPositioner>();
 
 		private void Start()
 		{
@@ -59,22 +66,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 					mpBones[i] = avatarTransforms.FirstOrDefault(t => t.name == mpBoneName);
 			}
 
-			if (ovrSkeletonObjectToSync != null)
-			{
-				Transform[] ovrTransforms = ovrSkeletonObjectToSync.GetComponentsInChildren<Transform>();
-				ovrBones = new Transform[(int)OVRBodyBoneId.LowerBody_End];
-				for (int i = (int)OVRBodyBoneId.Body_Start; i < (int)OVRBodyBoneId.LowerBody_End; i++)
-				{
-					OVRBodyBoneId boneId = (OVRBodyBoneId)i;
-					string ovrBoneName = BonesMapping.boneIdToOVRBones[boneId];
-					if (!string.IsNullOrEmpty(ovrBoneName))
-						ovrBones[i] = ovrTransforms.FirstOrDefault(t => t.name == ovrBoneName);
-				}
-			}
-			else
-			{
-				skeletonDataProvider = FindSkeletonDataProvider();
-			}
+			skeletonDataProvider = FindSkeletonDataProvider();
 
 			Transform leftForearmTwist1 = GetTransformByName(avatarTransforms, BonesMapping.leftForeArmTwist1Name);
 			Transform leftForearmTwist2 = GetTransformByName(avatarTransforms, BonesMapping.leftForeArmTwist2Name);
@@ -94,30 +86,30 @@ namespace AvatarSDK.MetaPerson.Oculus
 				transformsPositioner = GetComponentInChildren<OVRTransformsPositioner>();
 
 			bonesIKs = GetComponentsInChildren<TwoBoneIK>().ToList();
-			bonesPositioners = GetComponentsInChildren<IBonesPositioner>().ToList();
 		}
 
 		private void LateUpdate()
 		{
-			if (ovrBones != null)
-			{
-				PoseData poseData = GetMetaPersonPoseFromOvrBones();
-				UpdateBonesPositions(poseData);
-			}
-			else if (skeletonDataProvider != null)
+			PoseData poseData = CreateBlankPoseData();
+			if (skeletonDataProvider != null)
 			{
 				var data = skeletonDataProvider.GetSkeletonPoseData();
 				if (data.IsDataValid)
-				{
-					PoseData poseData = OvrToMetaPersonPose(data);
-					UpdateBonesPositions(poseData);
-				}
+					TakePoseFromSkeletonPoseData(ref poseData, data);
 			}
+
+			if (syncBonesWithOtherModel)
+			{
+				TakePoseFromSourceBones(ref poseData);
+			}
+
+			UpdateBonesPositions(poseData);
 		}
 
 		public void UpdateBonesPositions(SkeletonPoseData skeletonPoseData)
 		{
-			PoseData poseData = OvrToMetaPersonPose(skeletonPoseData);
+			PoseData poseData = CreateBlankPoseData();
+			TakePoseFromSkeletonPoseData(ref poseData, skeletonPoseData);
 			UpdateBonesPositions(poseData);
 		}
 
@@ -155,14 +147,6 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 			foreach (var twoBoneIk in bonesIKs)
 				twoBoneIk.ForceUpdate();
-
-			if (alignFingersWithIK)
-			{
-				foreach (var bonePositioner in bonesPositioners)
-				{
-					bonePositioner.UpdateBonesPositions(poseData, avatarPosition, avatarRotation);
-				}
-			}
 
 			if (skeletonMapping.skeletonType == MetaPersonSkeletonType.Male)
 			{
@@ -259,6 +243,27 @@ namespace AvatarSDK.MetaPerson.Oculus
 				rightHandTwistAdjustment.Update(twist1Coeff, twist2Coeff);
 		}
 
+		public void TakeAllBonesToSyncFromSourceModel()
+		{
+			if (sourceBonesModel != null)
+			{
+				sourceBones.Clear();
+
+				Transform[] ovrTransforms = sourceBonesModel.GetComponentsInChildren<Transform>();
+				for (int i = (int)OVRBodyBoneId.Body_Start; i < (int)OVRBodyBoneId.LowerBody_End; i++)
+				{
+					OVRBodyBoneId boneId = (OVRBodyBoneId)i;
+					string ovrBoneName = BonesMapping.boneIdToOVRBones[boneId];
+					if (!string.IsNullOrEmpty(ovrBoneName))
+					{
+						Transform ovrTransform = ovrTransforms.FirstOrDefault(t => t.name == ovrBoneName);
+						if (ovrTransform != null)
+							sourceBones.Add(new BoneTransform() { boneId = boneId, transform = ovrTransform });
+					}
+				}
+			}
+		}
+
 		private Transform GetTransformByName(Transform[] transforms, string name)
 		{
 			return transforms.FirstOrDefault(t => t.name == name);
@@ -291,7 +296,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 			return null;
 		}
 
-		private PoseData OvrToMetaPersonPose(SkeletonPoseData ovrPoseData)
+		private PoseData CreateBlankPoseData()
 		{
 			PoseData mpPoseData = new PoseData();
 			mpPoseData.positions = new Vector3[(int)OVRBodyBoneId.LowerBody_End];
@@ -299,40 +304,43 @@ namespace AvatarSDK.MetaPerson.Oculus
 			mpPoseData.isValidData = new bool[(int)OVRBodyBoneId.LowerBody_End];
 			for (int i = (int)OVRBodyBoneId.Body_Start; i < (int)OVRBodyBoneId.LowerBody_End; i++)
 			{
-				if (i < ovrPoseData.BoneTranslations.Length)
-				{
-					mpPoseData.positions[i] = ovrPoseData.BoneTranslations[i].FromFlippedZVector3f();
-					mpPoseData.rotations[i] = skeletonMapping.OVRToMPRotation((OVRBodyBoneId)i, ovrPoseData.BoneRotations[i].FromFlippedZQuatf());
-					mpPoseData.isValidData[i] = true;
-				}
-				else
-					mpPoseData.isValidData[i] = false;
+				mpPoseData.positions[i] = Vector3.zero;
+				mpPoseData.rotations[i] = Quaternion.identity;
+				mpPoseData.isValidData[i] = false;
 			}
 			return mpPoseData;
 		}
 
-		private PoseData GetMetaPersonPoseFromOvrBones()
+		private void TakePoseFromSkeletonPoseData(ref PoseData poseData, SkeletonPoseData ovrPoseData)
 		{
-			Quaternion invRootRotation = Quaternion.Inverse(ovrSkeletonObjectToSync.transform.rotation);
-			Matrix4x4 toOvrRootMat = ovrSkeletonObjectToSync.transform.worldToLocalMatrix;
-
-			PoseData mpPoseData = new PoseData();
-			mpPoseData.positions = new Vector3[(int)OVRBodyBoneId.LowerBody_End];
-			mpPoseData.rotations = new Quaternion[(int)OVRBodyBoneId.LowerBody_End];
-			mpPoseData.isValidData = new bool[(int)OVRBodyBoneId.LowerBody_End];
 			for (int i = (int)OVRBodyBoneId.Body_Start; i < (int)OVRBodyBoneId.LowerBody_End; i++)
 			{
-				Transform ovrBone = ovrBones[i];
-				if (ovrBone != null)
+				if (i < ovrPoseData.BoneTranslations.Length)
 				{
-					mpPoseData.positions[i] = toOvrRootMat.MultiplyPoint(ovrBone.position);
-					mpPoseData.rotations[i] = skeletonMapping.OVRToMPRotation((OVRBodyBoneId)i, invRootRotation * ovrBone.rotation);
-					mpPoseData.isValidData[i] = true;
+					poseData.positions[i] = ovrPoseData.BoneTranslations[i].FromFlippedZVector3f();
+					poseData.rotations[i] = skeletonMapping.OVRToMPRotation((OVRBodyBoneId)i, ovrPoseData.BoneRotations[i].FromFlippedZQuatf());
+					poseData.isValidData[i] = true;
 				}
-				else
-					mpPoseData.isValidData[i] = false;
 			}
-			return mpPoseData;
+		}
+
+		private void TakePoseFromSourceBones(ref PoseData poseData)
+		{
+			Quaternion invRootRotation = Quaternion.identity;
+			Matrix4x4 toOvrRootMat = Matrix4x4.identity;
+			if (sourceBonesModel != null)
+			{
+				invRootRotation = Quaternion.Inverse(sourceBonesModel.transform.rotation);
+				toOvrRootMat = sourceBonesModel.transform.worldToLocalMatrix;
+			}
+			
+			foreach(BoneTransform boneTransform in sourceBones)
+			{
+				int idx = (int)boneTransform.boneId;
+				poseData.positions[idx] = toOvrRootMat.MultiplyPoint(boneTransform.transform.position);
+				poseData.rotations[idx] = skeletonMapping.OVRToMPRotation(boneTransform.boneId, invRootRotation * boneTransform.transform.rotation);
+				poseData.isValidData[idx] = true;
+			}
 		}
 	}
 }

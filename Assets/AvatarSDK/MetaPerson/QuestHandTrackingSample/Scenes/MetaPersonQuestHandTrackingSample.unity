@@ -741,9 +741,10 @@ MonoBehaviour:
   twist1Coeff: 0.5
   twist2Coeff: 1
   moveHips: 1
-  alignFingersWithIK: 0
   skeletonMapping: {fileID: 11400000, guid: ff6e11850308b8d4198575329af305f5, type: 2}
-  ovrSkeletonObjectToSync: {fileID: 0}
+  syncBonesWithOtherModel: 0
+  sourceBonesModel: {fileID: 0}
+  sourceBones: []
 --- !u!1 &302325050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,9 +1467,10 @@ MonoBehaviour:
   twist1Coeff: 0.5
   twist2Coeff: 1
   moveHips: 1
-  alignFingersWithIK: 0
   skeletonMapping: {fileID: 11400000, guid: c0bb279fe90610f4ca91323df70f6d84, type: 2}
-  ovrSkeletonObjectToSync: {fileID: 0}
+  syncBonesWithOtherModel: 0
+  sourceBonesModel: {fileID: 0}
+  sourceBones: []
 --- !u!1 &718126581
 GameObject:
   m_ObjectHideFlags: 0
