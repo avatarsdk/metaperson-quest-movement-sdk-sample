@@ -29,8 +29,9 @@ Key properties:
 - **Twist 1 Coeff** and **Twist 2 Coeff** impact on skin twist in a region between the forearm and the hand.
 - **Move Hips** specifies if the position of the Hips node is updated. If it is disabled, only rotation is applied to the Hips node.
 - **Skeleton Mapping** specifies the mapping between OVR and MetaPerson skeletons.
-- **OVR Skeleton Object To Sync** contains a game object with the OVR Skeleton structure. If it is specified, MetaPerson avatar's bones positions/rotations are synchronized with bones from this object on each frame, including lower body part.
-See the **MetaPersonQuestHipPinningSample** as an example. Otherwise, the bones positions/rotations are taken from the **OVRBody** component that should be added to the MetaPerson avatar. See the **MetaPersonQuestHandTrackingSample** as an example.
+- **Sync Bones With Other Model** if true, some bones positions are taken from the **Source Bones**. Otherwise, they are provided by the **OVRBody**.
+- **Source Bones Model** contains a game object with the OVR Skeleton structure from which bones to sync are taken.
+- **Source Bones** list of transforms to which bones positions/rotations are synchronized with.
 
 ## Support
 If you have any questions or issues with the sample, please contact us <support@avatarsdk.com>.
