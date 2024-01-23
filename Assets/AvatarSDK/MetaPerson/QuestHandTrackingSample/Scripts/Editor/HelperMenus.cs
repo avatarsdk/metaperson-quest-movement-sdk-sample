@@ -23,7 +23,7 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		private static void SetupMetaPersonMaleForBodyTracking()
 		{
 			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRToMetaPersonSkeletonSyncMale.preset";
-			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Prefabs/IK_setup_male.prefab";
+			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Resources/Prefabs/IK_setup_male.prefab";
 			SetupMetaPersonForBodyTracking(skeletonPresetPath, ikPrefabPath);
 		}
 
@@ -31,7 +31,7 @@ namespace AvatarSDK.MetaPerson.Oculus.Editor
 		private static void SetupMetaPersonFemaleForBodyTracking()
 		{
 			string skeletonPresetPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Presets/OVRToMetaPersonSkeletonSyncFemale.preset";
-			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Prefabs/IK_setup_female.prefab";
+			string ikPrefabPath = "Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Resources/Prefabs/IK_setup_female.prefab";
 			SetupMetaPersonForBodyTracking(skeletonPresetPath, ikPrefabPath);
 		}
 
