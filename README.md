@@ -16,10 +16,16 @@ The sample demonstrates how to use [Body Tracking from the Movement SDK](https:/
 - `Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes/MetaPersonQuestHipPinningSample.unity`
 
 ### How To Configure MetaPerson Model For Body Tracking
+#### Configure In Editor
 1. Add a MetaPerson avatar from the [MetaPerson Creator](https://metaperson.avatarsdk.com/) into a unity scene.
 2. Right click on the model in the Hierarchy window and choose `Movement -> Setup Character for Body Tracking -> Format: MetaPerson Male`. Choose `Format: MetaPerson Female` if you are using the MetaPerson Female model.
 ![Configure MetaPerson Model](./Documentation/Images/setup_model_for_body_tracking.jpg "Configure MetaPerson Model")
 3. It will add the [OVRToMetaPersonSkeletonSync](./Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scripts/OVRToMetaPersonSkeletonSync.cs) component to the model and do initial setup.
+#### Configure Runtime Loaded Avatars 
+If you load avatars at runtime, use the [MetaPersonBodyTrackingSetupHelper](./Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scripts/MetaPersonBodyTrackingSetupHelper.cs) for configuration.
+```c#
+MetaPersonBodyTrackingSetupHelper.SetupMetaPersonForBodyTracking(metaPersonMaleAvatar, MetaPersonSkeletonType.Male);
+```
 
 ### OVRToMetaPersonSkeletonSync
 This component applies Body Tracking data to a MetaPerson avatar. 
