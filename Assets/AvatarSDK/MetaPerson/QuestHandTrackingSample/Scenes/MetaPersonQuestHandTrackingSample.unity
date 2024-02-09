@@ -942,6 +942,7 @@ MonoBehaviour:
   end: {fileID: 244769916}
   target: {fileID: 1261229653}
   pole: {fileID: 1891798031}
+  leftHand: 1
 --- !u!1 &937367645
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +994,7 @@ MonoBehaviour:
   end: {fileID: 677191308}
   target: {fileID: 63454532}
   pole: {fileID: 215903663}
+  leftHand: 0
 --- !u!1 &1103650582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1121,7 @@ MonoBehaviour:
   end: {fileID: 244769895}
   target: {fileID: 358969317}
   pole: {fileID: 1272461018}
+  leftHand: 0
 --- !u!1 &1145398380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1458,7 @@ MonoBehaviour:
   end: {fileID: 677191329}
   target: {fileID: 194478410}
   pole: {fileID: 1145398381}
+  leftHand: 1
 --- !u!1 &1891798030
 GameObject:
   m_ObjectHideFlags: 0

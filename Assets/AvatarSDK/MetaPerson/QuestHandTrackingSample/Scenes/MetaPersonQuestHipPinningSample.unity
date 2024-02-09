@@ -1927,6 +1927,7 @@ MonoBehaviour:
   end: {fileID: 212462994}
   target: {fileID: 733951886}
   pole: {fileID: 504144260}
+  leftHand: 1
 --- !u!1 &919312751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1399262706480193352, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
       propertyPath: m_UpdateWhenOffscreen
@@ -2741,6 +2742,7 @@ MonoBehaviour:
   end: {fileID: 775546871}
   target: {fileID: 919312752}
   pole: {fileID: 631866657}
+  leftHand: 0
 --- !u!1 &940783626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,6 +3061,7 @@ MonoBehaviour:
   end: {fileID: 1753877230}
   target: {fileID: 628579453}
   pole: {fileID: 1285439563}
+  leftHand: 1
 --- !u!4 &1341880144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2223233092441017123, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
@@ -4690,7 +4693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 968dd5dc2be7d7240bee5a909b4b8a39, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1399262706480193352, guid: 968dd5dc2be7d7240bee5a909b4b8a39, type: 3}
       propertyPath: m_UpdateWhenOffscreen
@@ -5490,6 +5493,7 @@ MonoBehaviour:
   end: {fileID: 212462999}
   target: {fileID: 2132558461}
   pole: {fileID: 1453093725}
+  leftHand: 0
 --- !u!4 &1958404621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7072540356585855878, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}

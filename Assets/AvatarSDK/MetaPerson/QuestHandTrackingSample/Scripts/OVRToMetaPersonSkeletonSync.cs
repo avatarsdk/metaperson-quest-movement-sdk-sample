@@ -151,6 +151,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 			if (skeletonMapping.skeletonType == MetaPersonSkeletonType.Male)
 			{
 				//right hand adjustments
+				if (poseData.isValidData[(int)OVRBodyBoneId.Body_RightHandWrist])
 				{
 					Transform rightLittleProximalTransform = mpBones[(int)OVRSkeleton.BoneId.Body_RightHandLittleProximal];
 					Transform rightLittleIntermediateTransform = mpBones[(int)OVRSkeleton.BoneId.Body_RightHandLittleIntermediate];
@@ -174,6 +175,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 				}
 
 				//left hand adjustments
+				if (poseData.isValidData[(int)OVRBodyBoneId.Body_LeftHandWrist])
 				{
 					Transform leftLittleProximalTransform = mpBones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleProximal];
 					Transform leftLittleIntermediateTransform = mpBones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleIntermediate];
@@ -199,6 +201,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 			else if (skeletonMapping.skeletonType == MetaPersonSkeletonType.Female)
 			{
 				//right hand adjustments
+				if (poseData.isValidData[(int)OVRBodyBoneId.Body_RightHandWrist])
 				{
 					Transform rightLittleProximalTransform = mpBones[(int)OVRSkeleton.BoneId.Body_RightHandLittleProximal];
 					Transform rightLittleIntermediateTransform = mpBones[(int)OVRSkeleton.BoneId.Body_RightHandLittleIntermediate];
@@ -218,6 +221,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 				}
 
 				//left hand adjustments
+				if (poseData.isValidData[(int)OVRBodyBoneId.Body_LeftHandWrist])
 				{
 					Transform leftLittleProximalTransform = mpBones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleProximal];
 					Transform leftLittleIntermediateTransform = mpBones[(int)OVRSkeleton.BoneId.Body_LeftHandLittleIntermediate];
