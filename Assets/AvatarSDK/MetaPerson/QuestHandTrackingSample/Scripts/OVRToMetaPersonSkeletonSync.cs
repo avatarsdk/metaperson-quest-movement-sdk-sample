@@ -39,6 +39,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public GameObject sourceBonesModel = null;
 
+		public bool feetPositionInWorldSpace = true;
+
 		public List<BoneTransform> sourceBones = new List<BoneTransform>();
 
 		private Transform[] mpBones;
@@ -340,10 +342,22 @@ namespace AvatarSDK.MetaPerson.Oculus
 			
 			foreach(BoneTransform boneTransform in sourceBones)
 			{
-				int idx = (int)boneTransform.boneId;
-				poseData.positions[idx] = toOvrRootMat.MultiplyPoint(boneTransform.transform.position);
-				poseData.rotations[idx] = skeletonMapping.OVRToMPRotation(boneTransform.boneId, invRootRotation * boneTransform.transform.rotation);
-				poseData.isValidData[idx] = true;
+				if (feetPositionInWorldSpace &&
+					(boneTransform.boneId == OVRBodyBoneId.LowerBody_LeftFoot ||
+					boneTransform.boneId == OVRBodyBoneId.LowerBody_RightFoot))
+				{
+					int idx = (int)boneTransform.boneId;
+					poseData.positions[idx] = boneTransform.transform.position;
+					poseData.rotations[idx] = skeletonMapping.OVRToMPRotation(boneTransform.boneId, boneTransform.transform.rotation);
+					poseData.isValidData[idx] = true;
+				}
+				else
+				{
+					int idx = (int)boneTransform.boneId;
+					poseData.positions[idx] = toOvrRootMat.MultiplyPoint(boneTransform.transform.position);
+					poseData.rotations[idx] = skeletonMapping.OVRToMPRotation(boneTransform.boneId, invRootRotation * boneTransform.transform.rotation);
+					poseData.isValidData[idx] = true;
+				}
 			}
 		}
 	}
