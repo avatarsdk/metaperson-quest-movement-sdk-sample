@@ -12,6 +12,13 @@ using UnityEngine;
 
 namespace AvatarSDK.MetaPerson.Oculus
 {
+	public enum UpwardsDirection
+	{
+		NORMAL,
+		UP,
+		POLE
+	}
+
 	public class TwoBoneIK : MonoBehaviour
 	{
 		public Transform upper;
@@ -23,10 +30,14 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public bool leftHand = false;
 
-		/*private void LateUpdate()
+		public UpwardsDirection upwardsDirection = UpwardsDirection.NORMAL;
+
+		public bool debug = false;
+
+		private void LateUpdate()
 		{
 			SolveTwoBoneIK();
-		}*/
+		}
 
 		public void ForceUpdate()
 		{
@@ -47,26 +58,43 @@ namespace AvatarSDK.MetaPerson.Oculus
 			float b = end.localPosition.magnitude;
 			float c = Vector3.Distance(upper.position, targetPosition);
 			Vector3 n = Vector3.Cross(targetPosition - upper.position, pole.position - upper.position);
-
 			if (leftHand)
-			{
-				if (n.y > 0)
-					n.y = 0;
-			}
+				n *= -1.0f;
+
+			Vector3 upRotated = Quaternion.LookRotation(targetPosition - upper.position) * Vector3.up;
+			float angle = Vector3.SignedAngle(upRotated, n, targetPosition - upper.position);
+			if (leftHand)
+				angle = -Mathf.Clamp(angle, 0f, 90.0f);
 			else
-			{
-				if (n.y < 0)
-					n.y = 0;
-			}
+				angle = Mathf.Clamp(angle, -90f, 0.0f);
 
-			upper.rotation = Quaternion.LookRotation(targetPosition - upper.position, -pole.forward);
+			Vector3 nClamped = Quaternion.AngleAxis(angle, Vector3.Cross(n, upRotated)) * upRotated;
+			if (leftHand)
+				nClamped *= -1.0f;
+			
+			Vector3 upwards = leftHand ? -nClamped : nClamped;
+			if (upwardsDirection == UpwardsDirection.UP)
+				upwards = Vector3.up;
+			if (upwardsDirection == UpwardsDirection.POLE)
+				upwards = -pole.forward;
+
+			upper.rotation = Quaternion.LookRotation(targetPosition - upper.position, upwards);
+			upper.rotation = Quaternion.AngleAxis(-CosAngle(a, c, b), -nClamped) * upper.rotation;
 			upper.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, lower.localPosition));
-			upper.rotation = Quaternion.AngleAxis(-CosAngle(a, c, b), -n) * upper.rotation;
 
-			lower.rotation = Quaternion.LookRotation(targetPosition - lower.position, -pole.forward);
+			lower.rotation = Quaternion.LookRotation(targetPosition - lower.position, upwards);
 			lower.rotation *= Quaternion.Inverse(Quaternion.FromToRotation(Vector3.forward, end.localPosition));
 
 			end.rotation = target.rotation;
+
+			if (debug)
+			{
+				Debug.LogFormat("Angle: {0}", angle);
+				Vector3 centerPoint = (target.position + pole.position + upper.position) / 3.0f;
+				Debug.DrawLine(centerPoint, centerPoint + n.normalized * 0.25f, Color.red);
+				Debug.DrawLine(centerPoint, centerPoint + upRotated * 0.25f, Color.green);
+				Debug.DrawLine(centerPoint, centerPoint + nClamped.normalized * 0.25f, Color.blue);
+			}
 		}
 	}
 }
