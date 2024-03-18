@@ -35,6 +35,8 @@ Key properties:
 - **Twist 1 Coeff** and **Twist 2 Coeff** impact on skin twist in a region between the forearm and the hand.
 - **Move Hips** specifies if the position of the Hips node is updated. If it is disabled, only rotation is applied to the Hips node.
 - **Skeleton Mapping** specifies the mapping between OVR and MetaPerson skeletons.
+- **Arms Stretchable** specifies if the arms length can be increased to align model's hands with OVR hands.
+- **Feet Position In World Space** specifies if the feet positions in world space. Workaround for https://github.com/oculus-samples/Unity-Movement/issues/58.
 - **Sync Bones With Other Model** if true, some bones positions are taken from the **Source Bones**. Otherwise, they are provided by the **OVRBody**.
 - **Source Bones Model** contains a game object with the OVR Skeleton structure from which bones to sync are taken.
 - **Source Bones** is a list of transforms to which bones positions/rotations are synchronized with.
