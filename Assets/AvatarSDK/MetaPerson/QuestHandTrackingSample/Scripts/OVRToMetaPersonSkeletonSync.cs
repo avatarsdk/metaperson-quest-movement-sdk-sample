@@ -39,6 +39,8 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public GameObject sourceBonesModel = null;
 
+		public bool armsStretchable = false;
+
 		public bool feetPositionInWorldSpace = true;
 
 		public List<BoneTransform> sourceBones = new List<BoneTransform>();
@@ -148,7 +150,7 @@ namespace AvatarSDK.MetaPerson.Oculus
 				transformsPositioner.UpdatePositions(poseData, avatarPosition, avatarRotation);
 
 			foreach (var twoBoneIk in bonesIKs)
-				twoBoneIk.ForceUpdate();
+				twoBoneIk.ForceUpdate(armsStretchable);
 
 			if (skeletonMapping.skeletonType == MetaPersonSkeletonType.Male)
 			{

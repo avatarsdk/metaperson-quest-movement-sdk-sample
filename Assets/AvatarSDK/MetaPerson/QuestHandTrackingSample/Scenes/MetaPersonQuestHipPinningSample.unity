@@ -980,7 +980,7 @@ MonoBehaviour:
     _footTarget: {fileID: 1604106655}
     _leg: {fileID: 3771055518137595114}
     _foot: {fileID: 4705787184194316022}
-    _footRotationOffset: {x: 0, y: 165, z: 0}
+    _footRotationOffset: {x: 0, y: 0.25881913, z: 0, w: -0.9659258}
     _stepCurve:
       serializedVersion: 2
       m_Curve:
@@ -2069,6 +2069,8 @@ MonoBehaviour:
   target: {fileID: 733951886}
   pole: {fileID: 504144260}
   leftHand: 1
+  upwardsDirection: 0
+  debug: 0
 --- !u!1 &919312751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,6 +2893,8 @@ MonoBehaviour:
   target: {fileID: 919312752}
   pole: {fileID: 631866657}
   leftHand: 0
+  upwardsDirection: 0
+  debug: 0
 --- !u!1 &940783626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,6 +3033,8 @@ MonoBehaviour:
   skeletonMapping: {fileID: 11400000, guid: ff6e11850308b8d4198575329af305f5, type: 2}
   syncBonesWithOtherModel: 1
   sourceBonesModel: {fileID: 919132148663627287}
+  armsStretchable: 1
+  feetPositionInWorldSpace: 1
   sourceBones:
   - boneId: 1
     transform: {fileID: 8018118333971204619}
@@ -3211,6 +3217,8 @@ MonoBehaviour:
   target: {fileID: 628579453}
   pole: {fileID: 1285439563}
   leftHand: 1
+  upwardsDirection: 0
+  debug: 0
 --- !u!4 &1341880144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2223233092441017123, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}
@@ -3631,7 +3639,7 @@ MonoBehaviour:
     _footTarget: {fileID: 610921510}
     _leg: {fileID: 8865260598794527247}
     _foot: {fileID: 3264508517773334581}
-    _footRotationOffset: {x: 0, y: 205, z: 0}
+    _footRotationOffset: {x: 0, y: 0.25881904, z: 0, w: 0.9659258}
     _stepCurve:
       serializedVersion: 2
       m_Curve:
@@ -4332,6 +4340,8 @@ MonoBehaviour:
   skeletonMapping: {fileID: 11400000, guid: c0bb279fe90610f4ca91323df70f6d84, type: 2}
   syncBonesWithOtherModel: 1
   sourceBonesModel: {fileID: 919132148663627287}
+  armsStretchable: 1
+  feetPositionInWorldSpace: 1
   sourceBones:
   - boneId: 1
     transform: {fileID: 8018118333971204619}
@@ -5735,6 +5745,8 @@ MonoBehaviour:
   target: {fileID: 2132558461}
   pole: {fileID: 1453093725}
   leftHand: 0
+  upwardsDirection: 0
+  debug: 0
 --- !u!4 &1958404621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7072540356585855878, guid: fbcf3856a7a16384a82de2116f93a97f, type: 3}

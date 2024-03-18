@@ -34,14 +34,23 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public bool debug = false;
 
-		private void LateUpdate()
+		float upperToLowerDistance;
+		float upperToEndDistance;
+
+		private void Start()
 		{
-			SolveTwoBoneIK();
+			upperToLowerDistance = lower.localPosition.magnitude;
+			upperToEndDistance = lower.localPosition.magnitude + end.localPosition.magnitude;
 		}
 
-		public void ForceUpdate()
+		/*private void LateUpdate()
 		{
 			SolveTwoBoneIK();
+		}*/
+
+		public void ForceUpdate(bool allowArmStretch)
+		{
+			SolveTwoBoneIK(allowArmStretch);
 		}
 
 		private float CosAngle(float a, float b, float c)
@@ -50,9 +59,18 @@ namespace AvatarSDK.MetaPerson.Oculus
 			return Mathf.Acos(angle) * Mathf.Rad2Deg;
 		}
 
-		private void SolveTwoBoneIK()
+		private void SolveTwoBoneIK(bool allowArmStretch)
 		{
 			Vector3 targetPosition = target.position;
+
+			if (allowArmStretch)
+			{
+				float toTargetDistance = Vector3.Distance(upper.position, targetPosition);
+				float upperArmLength = upperToLowerDistance;
+				if (toTargetDistance > upperToEndDistance)
+					upperArmLength += toTargetDistance - upperToEndDistance;
+				lower.localPosition = lower.localPosition.normalized * upperArmLength;
+			}
 
 			float a = lower.localPosition.magnitude;
 			float b = end.localPosition.magnitude;
