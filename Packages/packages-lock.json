@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.avatarsdk.metaperson.loader": {
+      "version": "https://github.com/avatarsdk/metaperson-loader-unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.cloud.gltfast": "6.0.1"
+      },
+      "hash": "a1eeac7e9044e949f786de4887fb1d233d0bc101"
+    },
     "com.meta.movement": {
       "version": "https://github.com/oculus-samples/Unity-Movement.git",
       "depth": 0,
@@ -65,6 +74,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.cloud.gltfast": {
+      "version": "6.0.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.mathematics": "1.3.1",
+        "com.unity.burst": "1.8.4"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
@@ -126,8 +147,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
-      "version": "1.2.6",
-      "depth": 3,
+      "version": "1.3.1",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
