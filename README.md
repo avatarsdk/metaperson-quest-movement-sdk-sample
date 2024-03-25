@@ -41,5 +41,11 @@ Key properties:
 - **Source Bones Model** contains a game object with the OVR Skeleton structure from which bones to sync are taken.
 - **Source Bones** is a list of transforms to which bones positions/rotations are synchronized with.
 
+## Samples
+Sample scenes can be found in the `Assets/AvatarSDK/MetaPerson/QuestHandTrackingSample/Scenes` directory.
+1. **MetaPersonQuestHandTrackingSample** - the basic sample that demonstrates how to configure MetaPerson avatars for body tracking.
+2. **MetaPersonQuestHipPinningSample** - this sample shows how to sync MetaPerson model's bones with another model. In this case OVR rig uses HipPinning and Grounding constraints and the MetaPerson models are synchonized with this rig.
+3. **MetaPersonQuestModelChangingSample** - this sample is based on the **MetaPersonQuestHipPinningSample** and demonstrates how to load MetaPerson avatars at runtime and replace the existed model on the scene.
+
 ## Support
 If you have any questions or issues with the sample, please contact us <support@avatarsdk.com>.
