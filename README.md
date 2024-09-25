@@ -1,5 +1,5 @@
-# MetaPerson - Body Tracking From Movement SDK Sample
-The sample demonstrates how to use [Body Tracking from the Movement SDK](https://developer.oculus.com/documentation/unity/move-body-tracking/) with [MetaPerson](https://metaperson.avatarsdk.com/) avatars.
+# MetaPerson - Body Tracking integration using Movement SDK
+The sample demonstrates how to integrate [Body Tracking using Movement SDK](https://developer.oculus.com/documentation/unity/move-body-tracking/) for [MetaPerson](https://metaperson.avatarsdk.com/) avatars.
 
 ### Requirements
 - Unity 2022.3.17f1 or newer
