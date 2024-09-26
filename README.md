@@ -3,8 +3,8 @@ The sample demonstrates how to integrate [Body Tracking using Movement SDK](http
 
 ### Requirements
 - Unity 2022.3.17f1 or newer
-- [Meta XR Core SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169) and [Meta XR Interaction SDK OVR](https://assetstore.unity.com/packages/tools/integration/meta-xr-interaction-sdk-ovr-integration-265014) v60 or newer
-- [Movement SDK](https://github.com/oculus-samples/Unity-Movement) v4.2.1 or newer
+- [Meta XR Core SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169) and [Meta XR Interaction SDK OVR](https://assetstore.unity.com/packages/tools/integration/meta-xr-interaction-sdk-ovr-integration-265014) v68 or newer
+- [Movement SDK](https://github.com/oculus-samples/Unity-Movement) v6.0.0
 
 ## Getting Started
 1. Clone this repository to your computer
