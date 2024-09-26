@@ -2,8 +2,8 @@
   "dependencies": {
     "com.avatarsdk.metaperson.loader": "https://github.com/avatarsdk/metaperson-loader-unity.git",
     "com.meta.movement": "https://github.com/oculus-samples/Unity-Movement.git",
-    "com.meta.xr.sdk.core": "60.0.0",
-    "com.meta.xr.sdk.interaction.ovr": "60.0.0",
+    "com.meta.xr.sdk.core": "68.0.3",
+    "com.meta.xr.sdk.interaction.ovr": "68.0.2",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.feature.development": "1.0.1",

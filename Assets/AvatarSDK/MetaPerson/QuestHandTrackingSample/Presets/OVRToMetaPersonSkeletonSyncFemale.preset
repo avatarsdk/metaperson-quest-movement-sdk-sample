@@ -37,15 +37,27 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: alignFingersWithIK
+    propertyPath: skeletonMapping
+    value: 
+    objectReference: {fileID: 11400000, guid: 46d81e94cac0ed54b9030caff6e94054, type: 2}
+  - target: {fileID: 0}
+    propertyPath: syncBonesWithOtherModel
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: skeletonMapping
+    propertyPath: sourceBonesModel
     value: 
-    objectReference: {fileID: 11400000, guid: ff6e11850308b8d4198575329af305f5, type: 2}
+    objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: ovrSkeletonObjectToSync
-    value: 
+    propertyPath: armsStretchable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: feetPositionInWorldSpace
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sourceBones.Array.size
+    value: 0
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

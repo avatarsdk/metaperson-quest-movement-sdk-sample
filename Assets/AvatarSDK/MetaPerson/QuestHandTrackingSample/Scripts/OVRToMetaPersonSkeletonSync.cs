@@ -35,13 +35,13 @@ namespace AvatarSDK.MetaPerson.Oculus
 
 		public SkeletonMapping skeletonMapping;
 
-		public bool armsStretchable = false;
-
-		public bool feetPositionInWorldSpace = true;
-
 		public bool syncBonesWithOtherModel = false;
 
 		public GameObject sourceBonesModel = null;
+
+		public bool armsStretchable = false;
+
+		public bool feetPositionInWorldSpace = true;
 
 		public List<BoneTransform> sourceBones = new List<BoneTransform>();
 
